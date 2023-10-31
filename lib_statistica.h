@@ -1,3 +1,6 @@
+#include<iostream>
+#include<cmath>
+
 double media_array (int value [], int ndati) { 
     int somma = 0 ;
     double media ;
