@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std ; 
 #include<cmath>
-
+#include<strings.h>
 
 float media (int valori[], int N) {
     int somma = 0 ;
@@ -43,7 +43,25 @@ void scambia(int a[], int v1, int  v2) {
     a[v2] = appoggio;
 }
 
-void print_array (int valori[], int num_elementi) {
+void print_array_int (int valori[], int num_elementi) {
+
+    cout << "{ " ;
+    for (int i = 0; i < num_elementi-1; i++) {
+         cout << valori [i] << " , " ;
+    }
+    cout << valori [num_elementi-1] << " }" << endl ;
+}
+
+void print_array_float (float valori[], int num_elementi) {
+
+    cout << "{ " ;
+    for (int i = 0; i < num_elementi-1; i++) {
+         cout << valori [i] << " , " ;
+    }
+    cout << valori [num_elementi-1] << " }" << endl ;
+}
+
+void print_array_char ( char valori[], int num_elementi) {
 
     cout << "{ " ;
     for (int i = 0; i < num_elementi-1; i++) {
@@ -105,4 +123,50 @@ void ordcrescente(int a[], int n) {
         p = posmin(a, i, n);
         scambia(a, i, p);
     }
+}
+
+int conta_dati_file ( string directory ) {
+    int i = 0 ;
+    float appo ;
+    ifstream data ;
+    data.open(directory) ;
+    
+    if (data.fail()) {
+        cout << "failed to read file" << endl ;
+        return -1 ;
+    }
+    
+    data >> appo;
+    
+    while (!data.eof()) {
+        i++ ;
+        data >> appo ;
+    }
+
+    return i ;
+}
+
+int conta_coppiedati_file (string directory){
+    float dato ;
+    char colore ;
+    int n_dati = 0 ;
+    ifstream data ;
+
+    data.open(directory) ;
+    
+    if (data.fail() ) {
+        cout << "failed to read file" << endl ;
+        return -1 ;
+    } 
+    
+    data >> dato;
+    data >> colore ;
+    while (!data.eof()) {
+        n_dati++ ;
+        data >> dato ;
+        data >> colore ;
+    }
+    data.close () ;
+    return n_dati;
+
 }

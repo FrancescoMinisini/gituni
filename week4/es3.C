@@ -7,7 +7,7 @@ int main () {
     float appo ;
     
     ifstream data ;
-    data.open("/home/studenti/francescogiuseppe.minisini/Informatica/File_professore/LabInfo_2023_24/Lab05/dati_short.dat") ;
+    data.open("/home/studenti/francescogiuseppe.minisini/Informatica/LabInfo_2023_24/Lab05/dati_short.dat") ;
     
     data >> appo;
     if (data.fail()) {
