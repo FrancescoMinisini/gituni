@@ -8,8 +8,8 @@ int main () {
     int k = 0 ;
     int n_dati ;
     ifstream data ;
-    string directory = "/home/studenti/francescogiuseppe.minisini/Informatica/LabInfo_2023_24/Lab06/sfere.dat" ;
-    
+   /*string directory = "/home/studenti/francescogiuseppe.minisini/Informatica/LabInfo_2023_24/Lab06/sfere.dat" ;*/
+    string directory = "/home/francesco/programmazione/LabInfo_2023_24/Lab06/sfere.dat" ;
     
     n_dati = conta_coppiedati_file (directory);
 
@@ -18,7 +18,7 @@ int main () {
     char  vcols[n_dati];
     
 
-    data.open("/home/studenti/francescogiuseppe.minisini/Informatica/LabInfo_2023_24/Lab06/sfere.dat") ;
+    data.open(directory) ;
     
     
     if (data.fail()) {
@@ -32,6 +32,8 @@ int main () {
     }
 
     data.close () ;
+
+   
     return 0 ;
 }
 

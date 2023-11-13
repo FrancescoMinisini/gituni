@@ -1,7 +1,4 @@
-#include<iostream>
-using namespace std ; 
-#include<cmath>
-#include<strings.h>
+#include"funzioni.h"
 
 float media (int valori[], int N) {
     int somma = 0 ;
@@ -150,6 +147,7 @@ int conta_coppiedati_file (string directory){
     float dato ;
     char colore ;
     int n_dati = 0 ;
+   
     ifstream data ;
 
     data.open(directory) ;
