@@ -1,6 +1,6 @@
 #include"funzioni.h"
 
-float media (int valori[], int N) {
+float media_array_int (int valori[], int N) {
     int somma = 0 ;
     float res ;
     for (int i = 0; i < N; i++)
@@ -11,8 +11,33 @@ float media (int valori[], int N) {
 
     return res ; 
 } 
+float media_array_float (float valori[], int N) {
+    float somma = 0 ;
+    float res ;
+    for (int i = 0; i < N; i++)
+    {
+     somma = somma + valori [i] ;
+    }
+    res = (float)somma / N ;
 
-float stnd (int valori[], int N, float m) {
+    return res ; 
+} 
+
+double media_array_double (double valori[], int N) {
+    double somma = 0 ;
+    double res ;
+    for (int i = 0; i < N; i++)
+    {
+     somma = somma + valori [i] ;
+    }
+    res = (double)somma / N ;
+
+    return res ; 
+} 
+
+
+
+float stnd_int (int valori[], int N, float m) {
     float sum_scarto = 0 ; 
     float res ;
     for (int i = 0; i < N; i++)
@@ -22,6 +47,32 @@ float stnd (int valori[], int N, float m) {
     res = sqrt(sum_scarto / (-1)) ;
     return res ;
 }
+
+float stnd_float (float value [], int ndati, float media) {
+    float dev ;
+    float scarto = 0;
+    float somma = 0 ;
+    for( int i = 0; i < ndati ; i++) {
+        scarto = ( value[i]-media )  ;
+        somma = somma + pow(scarto , 2 ) ;
+    }
+    dev = sqrt (somma / (ndati-1));
+    return dev;
+}
+
+
+double stnd_double (double value [], int ndati, double media) {
+    double dev ;
+    double scarto = 0;
+    double somma = 0 ;
+    for( int i = 0; i < ndati ; i++) {
+        scarto = ( value[i]-media )  ;
+        somma = somma + pow(scarto , 2 ) ;
+    }
+    dev = sqrt (somma / (ndati-1));
+    return dev;
+}
+
 
 bool isOutlier (int valore, float m,float stnd) {
 

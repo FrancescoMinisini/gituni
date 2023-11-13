@@ -4,9 +4,17 @@ using namespace std ;
 #include<strings.h>
 #include<fstream>
 
-float media (int valori[], int n_elementi) ;
+float media_array_int (int valori[], int n_elementi) ;
 
-float stnd (int valori[], int n_elementi, float media) ;
+float media_array_float (float valori[], int n_elementi) ;
+
+double media_array_double (double valori[], int N) ;
+
+float stnd_int (int valori[], int n_elementi, float media) ;
+
+float stnd_float (float value [], int ndati, float media) ;
+
+double stnd_double (double value [], int ndati, double media) ; 
 
 bool isOutlier (int valore, float media,float stnd) ;
 
