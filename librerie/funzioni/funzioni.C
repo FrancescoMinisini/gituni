@@ -91,6 +91,13 @@ void scambia(int a[], int v1, int  v2) {
     a[v2] = appoggio;
 }
 
+void scambia_float (float a[], int v1, int  v2) {
+    int appoggio;
+    appoggio = a[v1];
+    a[v1] = a[v2];
+    a[v2] = appoggio;
+}
+
 void print_array_int (int valori[], int num_elementi) {
 
     cout << "{ " ;
@@ -108,6 +115,16 @@ void print_array_float (float valori[], int num_elementi) {
     }
     cout << valori [num_elementi-1] << " }" << endl ;
 }
+
+void print_array_double (double valori[], int num_elementi) {
+
+    cout << "{ " ;
+    for (int i = 0; i < num_elementi-1; i++) {
+         cout << valori [i] << " , " ;
+    }
+    cout << valori [num_elementi-1] << " }" << endl ;
+}
+
 
 void print_array_char ( char valori[], int num_elementi) {
 
@@ -144,6 +161,8 @@ int MCD ( int p , int q) {
     return p ; 
 } 
 
+
+
 int posmin(int a[], int p, int j) {
     int s = a[p];
     int posmin = p;
@@ -155,6 +174,20 @@ int posmin(int a[], int p, int j) {
     }
     return posmin;
 }
+
+
+int posmin_float (float a[], int p, int j) {
+    int s = a[p];
+    int posmin = p;
+    for (int i = p + 1; i < j; i++) {
+        if (s > a[i]) {
+            s = a[i];
+            posmin = i;
+        }
+    }
+    return posmin;
+}
+
 
 int deleteEntrySwap(int v[], int size, int used, int where) {
     for (int i = where; i < used; i++)
@@ -172,6 +205,15 @@ void ordcrescente(int a[], int n) {
         scambia(a, i, p);
     }
 }
+
+void ordcrescente_float (float valori[], int n_elementi) {
+ int p = 0;
+    for (int i = 0; i < n_elementi; i++) {
+        p = posmin_float(valori, i, n_elementi);
+        scambia_float(valori, i, p);
+    }
+}
+
 
 int conta_dati_file ( string directory ) {
     int i = 0 ;
@@ -218,4 +260,138 @@ int conta_coppiedati_file (string directory){
     data.close () ;
     return n_dati;
 
+}
+
+void define_array_file_float (float dati[] , int n_dati , string directory) {
+
+    ifstream data ;
+    
+    data.open(directory) ;
+    
+    if (data.fail()) {
+        cout << "failed to read file" << endl ;
+        data.close () ;
+    } 
+
+    for (int k = 0 ; k< n_dati ; k++){
+    data >> dati [k];
+    }
+
+    data.close () ;
+
+}
+
+void define_array_file_int (int dati[] , int n_dati , string directory) {
+
+    ifstream data ;
+    
+    data.open(directory) ;
+    
+    if (data.fail()) {
+        cout << "failed to read file" << endl ;
+        data.close () ;
+    } 
+
+    for (int k = 0 ; k< n_dati ; k++){
+    data >> dati [k];
+    }
+
+    data.close () ;
+
+}
+
+
+
+
+int posmax(int a[], int p, int j) {
+    int s = a[p];
+    int posmax = p;
+    for (int i = p + 1; i < j; i++) {
+        if (s < a[i]) {
+            s = a[i];
+            posmax = i;
+        }
+    }
+    return posmax;
+}
+
+
+int posmax_float (float a[], int p, int j) {
+    int s = a[p];
+    int posmax = p;
+    for (int i = p + 1; i < j; i++) {
+        if (s < a[i]) {
+            s = a[i];
+            posmax = i;
+        }
+    }
+    return posmax;
+}
+
+
+float mediana_float (float dati[], int n_dati) {
+    float mediana; 
+    if (n_dati % 2 == 0){
+        mediana = (dati[n_dati/2]+dati[(n_dati/2)-1])/2 ;
+    } else {
+        mediana = dati[(n_dati-1)/2] ; 
+    }
+    return mediana ;
+}
+
+
+float mediana (int dati[], int n_dati) {
+    float mediana; 
+    if (n_dati % 2 == 0){
+        mediana = (dati[n_dati/2]+dati[(n_dati/2)-1])/2 ; 
+    } else {
+        mediana = dati[(n_dati-1)/2] ;
+    }
+    return mediana ;
+}
+
+void calcolaStats (float dati [], int n_dati , float* pmin, float*pmax, float* pmediana, float* pmedia, float*pstddev) {
+*pmin = dati[posmin_float(dati , 0 , n_dati)];
+*pmax = dati[posmax_float(dati, 0 , n_dati)];
+*pmediana = mediana_float (dati, n_dati);
+*pmedia = media_array_float (dati, n_dati);
+*pstddev = stnd_float (dati, n_dati, *pmedia);
+}
+
+
+
+
+void print_array_flie_int (int valori[], int n_dati,string directory) {
+    ofstream file;
+    file.open (directory) ; 
+    if (file.fail() or file.fail()) {
+        cout << "failed to read file" << endl ;
+    } 
+
+    for (int i = 0; i < n_dati; i++)
+    {
+        file << valori[i]<< endl;
+    }
+    file.close ();
+    
+
+}
+
+
+
+bool is_perfect_square(int n) {
+    bool value = false ; 
+    float scarto = sqrtf(n)-(int)sqrtf(n);
+    if (scarto == 0) {
+        value = true; 
+    }
+    return value;
+}
+
+
+bool is_prime(int n){
+    for(int i=2; i<n; i++){
+        if(n%i==0) return false;
+    }
+    return true;
 }
