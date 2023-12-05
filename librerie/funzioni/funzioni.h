@@ -70,7 +70,9 @@ bool is_perfect_square(int n);
 
 bool is_prime(int n) ;
 
+int* carica_array_file_int (int& n_dati , string directory);
 
+int conta_primi(int dati [], int n_dati );
 
-
+int*seleziona_primi (int dati[], int n_dati, int& n_primi);
 

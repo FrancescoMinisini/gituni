@@ -395,3 +395,70 @@ bool is_prime(int n){
     }
     return true;
 }
+
+
+
+int* carica_array_file_int (int& n_dati , string directory) {
+    int* dati;
+     
+    
+    n_dati = conta_dati_file (directory); 
+   dati = new int [n_dati];
+    ifstream data ;
+    
+
+    data.open(directory) ;
+    
+    if (data.fail()) {
+        cout << "failed to read file" << endl ;
+        data.close () ;
+        return NULL;
+        n_dati = -1; 
+    } 
+
+    for (int k = 0 ; k< n_dati ; k++){
+    data >> dati [k];
+    }
+
+    data.close () ;
+
+
+    return dati; 
+}
+
+int conta_primi(int dati [], int n_dati ) {
+    int n_primi = 0; 
+    for (int i = 0; i < n_dati; i++)
+        {
+            if ( is_prime (dati [i])) {
+                n_primi++ ;
+            }
+        }
+
+        return n_primi; 
+    }
+
+
+    int*seleziona_primi (int dati[], int n_dati, int& n_primi) {
+        int* primi;
+        n_primi = conta_primi ( dati , n_dati );
+        primi = new int [n_primi]; 
+        int k= 0 ; 
+        for (int i = 0; i < n_dati; i++)
+        {
+            if ( is_prime (dati [i])) {
+                primi [k] = dati[i];  
+                k++; 
+            }
+        }
+        return primi; 
+    }
+
+
+
+
+
+
+
+
+

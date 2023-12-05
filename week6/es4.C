@@ -37,4 +37,3 @@ float* carica_dati_file (string directory , int* n_dati) {
     return dati;
 }
 
-}

@@ -10,7 +10,7 @@ int main () {
     bool* sqrt; 
     bool* primo; 
     string direcory = "interi.dat"; 
-    int n_dati, k=0;    
+    int n_dati, k=1;    
     n_dati = conta_dati_file (direcory);
     int used = n_dati; 
     int* dati;
@@ -30,23 +30,34 @@ int main () {
                 sqrt[i] = false ; 
         }
         if (!is_prime(dati[i])) {
-                primo [i] = true ; 
+                primo [i] = false ; 
         }
     }
 
-    for (int i = 0; i < n_dati; i++) {
-        if (sqrt [i] == false or primo [i] == false) {
-            used = elimina(dati ,n_dati - k , i); 
+    for (int i = 0; i < n_dati - k ; i++) {
+        if ((sqrt [i] == false) and (primo [i] == false)) {
+            while ((sqrt [n_dati - k] == false) and (primo[n_dati-k]== false))
+            {
+            used--;
             k++;
+            
+            }
+            
+            used = elimina(dati ,n_dati - k +1 , i); 
+            k++;
+            
         }
     }
+
     print_array_int (dati, used);
     return 0 ; 
 }
 
 int elimina (int valori [], int used, int pos){
-    scambia (valori, pos, used -1);
+    
+    scambia (valori, pos, used -1 );
+
     used--; 
+
     return used; 
 }
-
