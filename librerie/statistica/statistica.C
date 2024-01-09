@@ -85,3 +85,64 @@ int resto (int Num, int Den) {
     return r ; 
 
 }
+
+double x_medio (my_array_puntiR2 dati) {
+    double somma = 0 ;
+    double res ;
+    if (dati.used = 0){
+        cout << endl << "array slots used are 0"<< endl; 
+    }
+    for (int i = 0; i < dati.used; i++)
+    {
+     somma = somma + dati.raw[i].x ;
+    }
+    res = (double)somma / dati.used ;
+
+    return res ; 
+} 
+
+double y_medio (my_array_puntiR2 dati) {
+    double somma = 0 ;
+    double res ;
+    if (dati.used = 0){
+        cout << endl << "array slots used are 0"<< endl; 
+    }
+    for (int i = 0; i < dati.used; i++)
+    {
+     somma = somma + dati.raw[i].y ;
+    }
+    res = (double)somma / dati.used ;
+
+    return res ; 
+} 
+
+
+double stima_m (my_array_puntiR2 dati, double xm , double ym){
+    double scarto_x ,scarto_y ,somma_nom = 0 , somma_den = 0 , res = 0; 
+    for (int i = 0; i < dati.used; i++)
+    {
+    scarto_x = dati.raw[i].x - xm ; 
+    scarto_y = dati.raw[i].y - ym ;
+    somma_nom = somma_nom + scarto_x*scarto_y;
+    somma_den = somma_den + powf64 (scarto_x , 2 );
+    }
+    res = somma_nom / somma_den; 
+    return res ; 
+}
+double stima_q (my_array_puntiR2 dati , double x_medio , double y_medio , double m) {
+    double res = x_medio - m*y_medio;   
+    return res; 
+}
+
+void stima_retta ( my_array_puntiR2 dati, double& m , double& q) {
+    double xm = x_medio ( dati), ym = y_medio (dati);
+    m = stima_m (dati,xm,ym);
+    q = stima_q ( dati ,m , xm , ym);
+    if ( q < 0 ) {
+    cout << endl << "Y = " << m << "X " << q << endl; }
+    else if ( q == 0 ) {
+    cout << endl << "Y = " << m << "X ";
+    } else if ( q > 0 ) {
+        cout << endl << "Y = " << m << "X +" << q << endl;
+    }
+}

@@ -1,8 +1,30 @@
 #include<iostream>
 using namespace std ; 
 #include<cmath>
-#include<strings.h>
+#include<cstring>
 #include<fstream>
+#define INCR 20
+
+struct puntoR2 {
+    double x; 
+    double y; 
+};
+struct my_array_puntiR2 {
+    int size;
+    int used;
+    puntoR2*raw;
+} ;
+struct my_array_int {
+    int size;
+    int used;
+    int*raw;
+};
+
+struct my_array_double {
+    int size;
+    int used;
+    double* raw;
+};
 
 float media_array_int (int valori[], int n_elementi) ;
 
@@ -75,4 +97,38 @@ int* carica_array_file_int (int& n_dati , string directory);
 int conta_primi(int dati [], int n_dati );
 
 int*seleziona_primi (int dati[], int n_dati, int& n_primi);
+
+int resizeMyArray( my_array_int * my_array, int new_dim);
+
+my_array_int carica_interi_file (int& n_dati , string directory, int& error_code);
+
+void print_array_puntiR2  (my_array_puntiR2 dati);
+
+double stima_m (my_array_puntiR2 dati, double x_medio , double y_medio);
+
+double stima_q (my_array_puntiR2 dati , double x_medio , double y_medio , double m);
+
+puntoR2* carica_puntoR2_file (int& n_dati , string directory, int& error_code);
+
+double x_medio (my_array_puntiR2 dati);
+
+double y_medio (my_array_puntiR2 dati);
+
+void stima_retta ( my_array_puntiR2 dati, double& m , double& q);
+
+void print_array_puntiR2  (my_array_puntiR2 dati);
+
+int ricerca (my_array_int v , int chiave) ;
+
+int ricerca_binaria (my_array_int dati, int inizio , int fine , int chiave) ;
+
+void initialize( my_array_int* dati, string filename, int& error_code );
+void initialize( my_array_int* dati );
+void initialize ( my_array_int* dati, int size);
+int peek (my_array_int*p, int pos);
+void dispose(my_array_int *p);
+void insert (my_array_int* dati, int value);
+void remove (my_array_int* dati , int pos);
+void insert (my_array_int* dati, int value , int  pos );
+void deepCpy (my_array_int *p1, my_array_int*p2);
 

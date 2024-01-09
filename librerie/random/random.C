@@ -24,7 +24,14 @@ void imposta_seed () {
     srand(time(NULL));
 }
 
+void generate_array ( int dati [], int n_dati) {
+    int appo ; 
+    for (int i= 0 ; i < n_dati ; i++){
+        appo = (int)rand_uniforme(0,1000);
+        dati[i]= appo;
+    }
 
+}
 
 
 

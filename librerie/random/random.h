@@ -12,3 +12,5 @@ double rand_uniforme(double minimo, double massimo);
 double rand_gaussiano (double media,  double std);
 
 void imposta_seed ();
+
+void generate_array ( int dati [], int n_dati);

@@ -1,4 +1,6 @@
 #include"funzioni.h"
+#include<cstring>
+#define INCR 20
 
 float media_array_int (int valori[], int N) {
     int somma = 0 ;
@@ -11,6 +13,7 @@ float media_array_int (int valori[], int N) {
 
     return res ; 
 } 
+
 float media_array_float (float valori[], int N) {
     float somma = 0 ;
     float res ;
@@ -35,8 +38,6 @@ double media_array_double (double valori[], int N) {
     return res ; 
 } 
 
-
-
 float stnd_int (int valori[], int N, float m) {
     float sum_scarto = 0 ; 
     float res ;
@@ -60,7 +61,6 @@ float stnd_float (float value [], int ndati, float media) {
     return dev;
 }
 
-
 double stnd_double (double value [], int ndati, double media) {
     double dev ;
     double scarto = 0;
@@ -72,7 +72,6 @@ double stnd_double (double value [], int ndati, double media) {
     dev = sqrt (somma / (ndati-1));
     return dev;
 }
-
 
 bool isOutlier (int valore, float m,float stnd) {
 
@@ -125,7 +124,6 @@ void print_array_double (double valori[], int num_elementi) {
     cout << valori [num_elementi-1] << " }" << endl ;
 }
 
-
 void print_array_char ( char valori[], int num_elementi) {
 
     cout << "{ " ;
@@ -161,8 +159,6 @@ int MCD ( int p , int q) {
     return p ; 
 } 
 
-
-
 int posmin(int a[], int p, int j) {
     int s = a[p];
     int posmin = p;
@@ -175,7 +171,6 @@ int posmin(int a[], int p, int j) {
     return posmin;
 }
 
-
 int posmin_float (float a[], int p, int j) {
     int s = a[p];
     int posmin = p;
@@ -187,7 +182,6 @@ int posmin_float (float a[], int p, int j) {
     }
     return posmin;
 }
-
 
 int deleteEntrySwap(int v[], int size, int used, int where) {
     for (int i = where; i < used; i++)
@@ -213,7 +207,6 @@ void ordcrescente_float (float valori[], int n_elementi) {
         scambia_float(valori, i, p);
     }
 }
-
 
 int conta_dati_file ( string directory ) {
     int i = 0 ;
@@ -300,9 +293,6 @@ void define_array_file_int (int dati[] , int n_dati , string directory) {
 
 }
 
-
-
-
 int posmax(int a[], int p, int j) {
     int s = a[p];
     int posmax = p;
@@ -314,7 +304,6 @@ int posmax(int a[], int p, int j) {
     }
     return posmax;
 }
-
 
 int posmax_float (float a[], int p, int j) {
     int s = a[p];
@@ -328,7 +317,6 @@ int posmax_float (float a[], int p, int j) {
     return posmax;
 }
 
-
 float mediana_float (float dati[], int n_dati) {
     float mediana; 
     if (n_dati % 2 == 0){
@@ -338,7 +326,6 @@ float mediana_float (float dati[], int n_dati) {
     }
     return mediana ;
 }
-
 
 float mediana (int dati[], int n_dati) {
     float mediana; 
@@ -358,9 +345,6 @@ void calcolaStats (float dati [], int n_dati , float* pmin, float*pmax, float* p
 *pstddev = stnd_float (dati, n_dati, *pmedia);
 }
 
-
-
-
 void print_array_flie_int (int valori[], int n_dati,string directory) {
     ofstream file;
     file.open (directory) ; 
@@ -377,8 +361,6 @@ void print_array_flie_int (int valori[], int n_dati,string directory) {
 
 }
 
-
-
 bool is_perfect_square(int n) {
     bool value = false ; 
     float scarto = sqrtf(n)-(int)sqrtf(n);
@@ -388,15 +370,12 @@ bool is_perfect_square(int n) {
     return value;
 }
 
-
 bool is_prime(int n){
     for(int i=2; i<n; i++){
         if(n%i==0) return false;
     }
     return true;
 }
-
-
 
 int* carica_array_file_int (int& n_dati , string directory) {
     int* dati;
@@ -438,8 +417,7 @@ int conta_primi(int dati [], int n_dati ) {
         return n_primi; 
     }
 
-
-    int*seleziona_primi (int dati[], int n_dati, int& n_primi) {
+int*seleziona_primi (int dati[], int n_dati, int& n_primi) {
         int* primi;
         n_primi = conta_primi ( dati , n_dati );
         primi = new int [n_primi]; 
@@ -454,11 +432,291 @@ int conta_primi(int dati [], int n_dati ) {
         return primi; 
     }
 
+int resizeMyArray( my_array_int * my_array, int new_dim) {
+    int* new_array;
+    new_array = new int [new_dim];
+    if (new_array == NULL) {
+        cout << "qualcosa è andato storto";
+        return -1; 
+    }
 
+    if (my_array->size <= new_dim) {
+        for (int i = 0; i < my_array->size; i++)
+        {
+             new_array [i] = my_array->raw[i];        }
+           
+    }
+    if (my_array->size > new_dim) {
+        for (int i = 0; i < new_dim; i++)
+        {
+            new_array [i] = my_array->raw[i];        }
+            
+    }
+       if (my_array->used > new_dim) {
+        my_array->used = new_dim;
+       } else {
+        my_array->size = new_dim;
+        }
 
+        delete [] my_array->raw;
+        my_array->raw = new_array;
+        
+        return 0;
+}
 
+my_array_int carica_interi_file (int& n_dati , string directory, int& error_code) {
+    my_array_int vettore; 
+     
+    
+    vettore.size = conta_dati_file (directory);
+    n_dati =vettore.size;
+    vettore.raw = new int [vettore.size];
+    if (vettore.raw == NULL) {
+        error_code= -2;
+        return vettore;
+    }
+    ifstream data ;
+    
+    //data.seekg(0,ios::beg); lo riporta all'inizio.
+    data.open(directory) ;
+    
+    if (data.fail()) {
+        cout << "failed to read file" << endl ;
+        data.close () ;
+        error_code = -1; 
+    } 
 
+    for (int k = 0 ; k< vettore.size ; k++){
+    data >> vettore.raw[k];
+    }
 
+    data.close () ;
+    vettore.used=vettore.size;
+    error_code = 0; 
+    return vettore; 
+}
+
+double stima_m (my_array_puntiR2 dati, double xm , double ym){
+    double scarto_x ,scarto_y ,somma_nom = 0 , somma_den = 0 , res = 0; 
+    for (int i = 0; i < dati.used; i++)
+    {
+    scarto_x = dati.raw[i].x - xm ; 
+    scarto_y = dati.raw[i].y - ym ;
+    somma_nom = somma_nom + scarto_x*scarto_y; 
+    somma_den = somma_den + powf64(scarto_x , 2 );
+    }
+    res = somma_nom / somma_den; 
+    return res ; 
+}
+
+double stima_q (my_array_puntiR2 dati,  double m, double x_medio , double y_medio  ) {
+    double res = x_medio - m*y_medio;   
+    return res; 
+}
+
+puntoR2* carica_puntoR2_file (int& n_dati , string directory, int& error_code) {
+    puntoR2* vettore; 
+     
+    int j; 
+    j = conta_dati_file (directory);
+    n_dati = j /2; 
+    if ( !(j%2 == 0) ) {
+        cout << "il numero di dati non è divisiblile per 2" << endl ;
+    }
+
+    vettore = new puntoR2 [n_dati];
+    if (vettore == NULL) {
+        error_code= -2;
+        return vettore;
+    }
+    ifstream data ;
+    
+    data.open(directory) ;
+    
+    if (data.fail()) {
+        cout << "failed to read file" << endl ;
+        data.close () ;
+        error_code = -1; 
+    } 
+
+    for (int k = 0 ; k< n_dati ; k++){
+    data >> vettore[k].x;
+    data >> vettore[k].y;
+    }
+
+    data.close () ;
+    error_code = 0; 
+    return vettore; 
+}
+
+double x_medio (my_array_puntiR2 dati) {
+    double somma = 0 ;
+    double res ;
+    if (dati.used == 0){
+        cout << endl << "array slots used are 0"<< endl; 
+    }
+    for (int i = 0; i < dati.used; i++)
+    {
+     somma = somma + dati.raw[i].x ;
+    }
+    res = (double)somma / dati.used ;
+
+    return res ; 
+} 
+
+double y_medio (my_array_puntiR2 dati) {
+    double somma = 0 ;
+    double res ;
+    if (dati.used == 0){
+        cout << endl << "array slots used are 0"<< endl; 
+    }
+    for (int i = 0; i < dati.used; i++)
+    {
+     somma = somma + dati.raw[i].y ;
+    }
+    res = (double)somma / dati.used ;
+
+    return res ; 
+} 
+
+void stima_retta ( my_array_puntiR2 dati, double& m , double& q) {
+    double xm = x_medio ( dati), ym = y_medio (dati);
+    m = stima_m (dati,xm,ym);
+    q = stima_q ( dati ,m , xm , ym);
+    if ( q < 0 ) {
+    cout << endl << "Y = " << m << "X " << q << endl; }
+    else if ( q == 0 ) {
+    cout << endl << "Y = " << m << "X ";
+    } else if ( q > 0 ) {
+        cout << endl << "Y = " << m << "X +" << q << endl;
+    }
+}
+
+void print_array_puntiR2  (my_array_puntiR2 dati) {
+
+    for (int i = 0; i < dati.used; i++) {
+         cout << "{ " << dati.raw[i].x << " , " <<dati.raw[i].y << " }" << endl;
+    }
+    
+}
+
+int ricerca (my_array_int v , int chiave) {
+    int pos = -1; 
+    for (int i = 0 ; i < v.used  ; i++)
+    {
+        if ( v.raw[i] == chiave){
+            pos = i;
+            break;
+        }
+    }
+    return pos;
+}
+
+int ricerca_binaria (my_array_int dati, int inizio , int fine , int chiave) {
+int m = (inizio + fine)/2 ;
+if (dati.raw[m] == chiave) {
+    return m; 
+}
+else if ( dati.raw[m] > fine ){
+    cout << endl <<"qualcosa è andato storto nella ricerca" << endl; 
+    return -1;
+}
+else {
+    if ( dati.raw[m] > chiave) {
+        return ricerca_binaria (dati , inizio , m-1 , chiave );
+    }
+    else {
+        return ricerca_binaria ( dati , m+1 , fine, chiave);
+    }
+    } 
+}
+
+void initialize (my_array_int* p) {
+p->size = 0; //(*p).size
+p->used = 0;
+p->raw = NULL;
+}
+
+void initialize (my_array_int *p, int d) {
+    p->size = d;
+    p->used = 0;
+    p->raw = new int[d];  // Allocate memory for an array of integers
+}
+
+void initialize( my_array_int *p, string directory, int& error_code ){
+    my_array_int vettore; 
+    vettore.size = conta_dati_file(directory);
+    vettore.raw = new int [vettore.size];
+    if (vettore.raw == NULL) {
+        error_code= -2;
+    }
+    ifstream data ;
+    
+    //data.seekg(0,ios::beg); lo riporta all'inizio.
+    data.open(directory) ;
+    
+    if (data.fail()) {
+        cout << "failed to read file" << endl ;
+        data.close () ;
+        error_code = -1; 
+    } 
+
+    for (int k = 0 ; k< vettore.size ; k++){
+    data >> vettore.raw[k];
+    }
+
+    data.close () ;
+    vettore.used=vettore.size;
+    error_code = 0; 
+}
+
+int peek (my_array_int*p, int pos) {
+    return p->raw[pos];
+}
+
+void dispose(my_array_int *p){
+p->size = 0; //(*p).size
+p->used = 0;
+delete [] p->raw;
+}
+
+void insert (my_array_int* dati, int value){
+    if (dati->used == dati->size) {
+        resizeMyArray (dati, dati->size + INCR);
+    }
+    dati->raw[dati->used] = value;
+(dati->used)++;
+}
+
+void insert (my_array_int* dati, int value , int  pos ){
+    if (dati->used == dati->size) {
+        resizeMyArray (dati, dati->size + INCR);
+    }
+
+    for (int i = pos ; i < dati->size; i++)
+    {
+        dati->raw[i+1] = dati->raw[i];
+    }
+    
+    dati->raw[pos] = value;
+    (dati->used)++;
+}
+
+void remove (my_array_int* dati , int pos) {
+    for (int i = 0; i < dati->size -1; i++)
+    {
+        dati->raw[i] = dati->raw[i+1];
+    }
+    (dati->used)--;
+}
+
+void deepCpy (my_array_int *p1, my_array_int*p2)
+{
+p2->size =p1->size;
+p2->used =p1->used;
+p2->raw = new int [p1->size];
+memcpy((void*) p2->raw,(void*) p1->raw, p2->used*sizeof(int));
+}
 
 
 

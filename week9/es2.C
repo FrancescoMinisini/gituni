@@ -13,8 +13,8 @@ double rilev(int n, double r);
 int main ()  {
     imposta_seed ();
     double res;  
-    double r = 1;
-    double n = 100000000; 
+    double r = 0.5;
+    double n = 10000000; 
     res =  rilev (n , r);
     cout << endl << res << endl ;
     return 0; 
@@ -43,7 +43,7 @@ bool is_inside_circle (puntoR2 p, double r ){
     return B;
 }
 
-int count_whithin ( int n , double r) {
+int count_whithin_circle ( int n , double r) {
     puntoR2 test; 
     int res = 0; 
     for (int i = 0; i < n; i++)
