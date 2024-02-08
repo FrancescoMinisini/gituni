@@ -720,3 +720,245 @@ memcpy((void*) p2->raw,(void*) p1->raw, p2->used*sizeof(int));
 
 
 
+
+void merge_ints(int data[], int i, int m, int f){
+    int j, k, z;
+    int* tmp = NULL; 
+    tmp = new int[f-i+1];
+
+    j = i; //indice del primo sottovettore
+    k = m+1; //indice del secondo sottovettore
+    z = 0; //indice di tmp
+
+    while (j <= m && k <= f){
+        if (data[j] <= data[k]) {
+            tmp[z] = data[j];
+            j++;
+        } else {
+            tmp[z] = data[k];
+            k++;
+        }
+        z++;
+    }
+
+    if (j > m) {
+        for (k; k <= f; k++){
+            tmp[z] = data[k];
+            z++;
+        }
+    } else {
+        for (j; j <= m; j++){
+            tmp[z] = data[j];
+            z++;
+        }
+    }
+
+    //ricopia tmp in data
+    z = 0;
+    for (z; z < f-i+1; z++){
+        data[i+z] = tmp[z];
+    }
+
+    delete []tmp;
+    tmp = NULL;
+}
+
+
+void merge_sort_int(int data[], int init, int final){
+    int m;
+    if (init < final){
+        m = init + (final - init)/2;
+        merge_sort_int(data, init, m);
+        merge_sort_int(data, m+1, final);
+        merge_ints(data, init, m, final);
+    }
+}
+
+
+void merge_floats(float data[], int i, int m, int f){
+    int j, k, z;
+    float* tmp; 
+    tmp = new float[f-i+1];
+
+    j = i; //indice del primo sottovettore
+    k = m+1; //indice del secondo sottovettore
+    z = 0; //indice di tmp
+
+    while (j <= m && k <= f){
+        if (data[j] <= data[k]) {
+            tmp[z] = data[j];
+            j++;
+        } else {
+            tmp[z] = data[k];
+            k++;
+        }
+        z++;
+    }
+
+    if (j > m) {
+        for (k; k <= f; k++){
+            tmp[z] = data[k];
+            z++;
+        }
+    } else {
+        for (j; j <= m; j++){
+            tmp[z] = data[j];
+            z++;
+        }
+    }
+
+    //ricopia tmp in data
+    z = 0;
+    for (z; z < f-i+1; z++){
+        data[i+z] = tmp[z];
+    }
+
+    delete []tmp;
+    tmp = NULL;
+}
+
+
+void merge_sort_float(float data[], int init, int final){
+    int m;
+    if (init < final){
+        m = init + (final - init)/2;
+        merge_sort_float(data, init, m);
+        merge_sort_float(data, m+1, final);
+        merge_floats(data, init, m, final);
+    }
+}
+
+
+void merge_doubles(double data[], int i, int m, int f){
+    int j, k, z;
+    double* tmp; 
+    tmp = new double[f-i+1];
+
+    j = i; //indice del primo sottovettore
+    k = m+1; //indice del secondo sottovettore
+    z = 0; //indice di tmp
+
+    while (j <= m && k <= f){
+        if (data[j] <= data[k]) {
+            tmp[z] = data[j];
+            j++;
+        } else {
+            tmp[z] = data[k];
+            k++;
+        }
+        z++;
+    }
+
+    if (j > m) {
+        for (k; k <= f; k++){
+            tmp[z] = data[k];
+            z++;
+        }
+    } else {
+        for (j; j <= m; j++){
+            tmp[z] = data[j];
+            z++;
+        }
+    }
+
+    //ricopia tmp in data
+    z = 0;
+    for (z; z < f-i+1; z++){
+        data[i+z] = tmp[z];
+    }
+
+    delete []tmp;
+    tmp = NULL;
+}
+
+
+void merge_sort_double(double data[], int init, int final){
+    int m;
+    if (init < final){
+        m = init + (final - init)/2;
+        merge_sort_double(data, init, m);
+        merge_sort_double(data, m+1, final);
+        merge_doubles(data, init, m, final);
+    }
+}
+
+
+
+
+void merge_sort_decr(float data[], int i, int f);
+void merge_floats_decr(float data[], int i, int m, int f);
+
+void merge_floats_decr(float data[], int i, int m, int f) {
+    int j, k, z;
+    float* tmp; 
+    tmp = new float[f - i + 1];
+
+    j = i; // indice del primo sottovettore
+    k = m + 1; // indice del secondo sottovettore
+    z = 0; // indice di tmp
+
+    while (j <= m && k <= f) {
+        if (data[j] >= data[k]) { // Cambiato da <= a >= per l'ordinamento decrescente
+            tmp[z] = data[j];
+            j++;
+        } else {
+            tmp[z] = data[k];
+            k++;
+        }
+        z++;
+    }
+
+    if (j > m) {
+        for (k; k <= f; k++) {
+            tmp[z] = data[k];
+            z++;
+        }
+    } else {
+        for (j; j <= m; j++) {
+            tmp[z] = data[j];
+            z++;
+        }
+    }
+
+    // ricopia tmp in data
+    z = 0;
+    for (z; z < f - i + 1; z++) {
+        data[i + z] = tmp[z];
+    }
+
+    delete[] tmp;
+    tmp = NULL;
+}
+
+void merge_sort_decr(float data[], int i, int f) {
+    if (i < f) {
+        int m = i + (f - i) / 2;
+
+        merge_sort_decr(data, i, m);
+        merge_sort_decr(data, m + 1, f);
+
+        merge_floats(data, i, m, f);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

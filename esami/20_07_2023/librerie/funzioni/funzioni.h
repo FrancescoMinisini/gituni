@@ -133,3 +133,48 @@ void remove (my_array_int* dati , int pos);
 void insert (my_array_int* dati, int value , int  pos );
 void deepCpy (my_array_int *p1, my_array_int*p2);
 
+
+//Funzione che unisce due sottovettori contigui ordinandoli di interi
+//int data: array di interi
+//int i: index del primo elem del primo vettore
+//int m: index mediano
+//int f: index finale
+void merge_ints(int data[], int i, int m, int f);
+
+
+//Algoritmo di merge sort per array di interi
+//int data[]: array di interi
+//int used: size dell'array
+void merge_sort_int(int data[], int init, int final);
+
+
+//Funzione che unisce due sottovettori contigui ordinandoli di interi
+//float data: array di interi
+//int i: index del primo elem del primo vettore
+//int m: index mediano
+//int f: index finale
+void merge_floats(float data[], int i, int m, int f);
+
+
+//Algoritmo di merge sort per array di interi
+//float data[]: array di interi
+//int used: size dell'array
+void merge_sort_float(float data[], int init, int final);
+
+
+//Funzione che unisce due sottovettori contigui ordinandoli di interi
+//int data: array di interi
+//int i: index del primo elem del primo vettore
+//int m: index mediano
+//int f: index finale
+void merge_doubles(double data[], int i, int m, int f);
+
+
+//Algoritmo di merge sort per array di interi
+//int data[]: array di interi
+//int used: size dell'array
+void merge_sort_double(double data[], int init, int final);
+
+
+void merge_sort_decr(float data[], int i, int f);
+void merge_floats_decr(float data[], int i, int m, int f);
