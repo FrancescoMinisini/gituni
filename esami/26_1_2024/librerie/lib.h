@@ -4,7 +4,7 @@ using namespace std ;
 #include<cmath>
 #include<cstring>
 #include<fstream>
-#include"librerie/funzioni/funzioni.h"
+//#include"librerie/funzioni/funzioni.h"
 
 struct giocatore {
 int cod; //codice giocatore

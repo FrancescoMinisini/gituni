@@ -1,0 +1,143 @@
+./esame.x
+
+numero iscritti : 60
+
+numero professionisti : 20
+
+numero professionisti : 40
+
+{ 2566 , ama } 
+{ 2537 , ama } 
+{ 245 , pro } 
+
+{ 952 , pro } 
+{ 754 , pro } 
+{ 9 , pro } 
+
+numero mani : 247
+
+{ 2372 , 51 } 
+{ 2832 , 65 } 
+{ 2350 , 45 } 
+
+{ 2030 , 36 } 
+{ 2867 , 58 } 
+{ 2786 , 39 } 
+
+{ 2566 , ama , 5 , 245 } 
+{ 2537 , ama , 5 , 253 } 
+{ 245 , pro , 5 , 335 } 
+
+{ 952 , pro , 4 , 278 } 
+{ 754 , pro , 5 , 293 } 
+{ 9 , pro , 4 , 256 } 
+
+{ 192 , pro , 5 , 390 } 
+{ 139 , pro , 5 , 361 } 
+{ 22 , pro , 5 , 360 } 
+{ 659 , pro , 5 , 354 } 
+{ 245 , pro , 5 , 335 } 
+{ 60 , pro , 5 , 335 } 
+{ 550 , pro , 5 , 322 } 
+{ 340 , pro , 5 , 318 } 
+{ 895 , pro , 5 , 317 } 
+{ 798 , pro , 4 , 314 } 
+{ 162 , pro , 4 , 310 } 
+{ 865 , pro , 5 , 298 } 
+{ 907 , pro , 4 , 295 } 
+{ 754 , pro , 5 , 293 } 
+{ 93 , pro , 4 , 282 } 
+{ 2750 , ama  , 5 , 279 } 
+{ 952 , pro , 4 , 278 } 
+{ 2726 , ama  , 5 , 274 } 
+{ 2218 , ama  , 5 , 271 } 
+{ 549 , pro , 4 , 265 } 
+{ 2828 , ama  , 5 , 262 } 
+{ 545 , pro , 4 , 260 } 
+{ 2350 , ama  , 5 , 259 } 
+{ 9 , pro , 4 , 256 } 
+{ 239 , pro , 4 , 254 } 
+{ 2537 , ama  , 5 , 253 } 
+{ 2288 , ama  , 5 , 250 } 
+{ 2970 , ama  , 5 , 249 } 
+{ 2648 , ama  , 5 , 248 } 
+{ 2566 , ama  , 5 , 245 } 
+{ 2542 , ama  , 5 , 243 } 
+{ 2030 , ama  , 5 , 243 } 
+{ 2649 , ama  , 4 , 225 } 
+{ 2832 , ama  , 4 , 220 } 
+{ 2456 , ama  , 4 , 219 } 
+{ 2643 , ama  , 4 , 216 } 
+{ 2484 , ama  , 4 , 214 } 
+{ 2792 , ama  , 4 , 214 } 
+{ 2095 , ama  , 4 , 203 } 
+{ 2465 , ama  , 4 , 201 } 
+{ 2808 , ama  , 4 , 193 } 
+{ 2720 , ama  , 4 , 190 } 
+{ 2647 , ama  , 4 , 186 } 
+{ 2845 , ama  , 3 , 179 } 
+{ 2867 , ama  , 3 , 172 } 
+{ 2684 , ama  , 4 , 163 } 
+{ 2786 , ama  , 3 , 161 } 
+{ 2825 , ama  , 3 , 161 } 
+{ 2257 , ama  , 3 , 160 } 
+{ 2553 , ama  , 3 , 155 } 
+{ 2407 , ama  , 3 , 155 } 
+{ 2476 , ama  , 3 , 152 } 
+{ 2805 , ama  , 3 , 152 } 
+{ 2483 , ama  , 3 , 149 } 
+{ 2506 , ama  , 3 , 147 } 
+{ 2614 , ama  , 3 , 143 } 
+{ 2622 , ama  , 3 , 141 } 
+{ 2301 , ama  , 3 , 141 } 
+{ 2616 , ama  , 3 , 138 } 
+{ 2372 , ama  , 3 , 134 } 
+
+posizione: 1 partecipante : 215 con punteggio: 887
+posizione: 2 partecipante : 234 con punteggio: 879
+posizione: 3 partecipante : 874 con punteggio: 879
+posizione: 4 partecipante : 400 con punteggio: 870
+posizione: 5 partecipante : 659 con punteggio: 858
+posizione: 6 partecipante : 515 con punteggio: 781
+posizione: 7 partecipante : 60 con punteggio: 765
+posizione: 8 partecipante : 584 con punteggio: 761
+posizione: 9 partecipante : 22 con punteggio: 757
+posizione: 10 partecipante : 245 con punteggio: 753
+posizione: 11 partecipante : 984 con punteggio: 749
+posizione: 12 partecipante : 550 con punteggio: 744
+posizione: 13 partecipante : 14 con punteggio: 734
+posizione: 14 partecipante : 340 con punteggio: 726
+posizione: 15 partecipante : 934 con punteggio: 669
+posizione: 16 partecipante : 41 con punteggio: 600
+posizione: 17 partecipante : 932 con punteggio: 583
+posizione: 18 partecipante : 491 con punteggio: 544
+posizione: 19 partecipante : 545 con punteggio: 543
+posizione: 20 partecipante : 40 con punteggio: 525
+posizione: 21 partecipante : 162 con punteggio: 522
+posizione: 22 partecipante : 9 con punteggio: 518
+posizione: 23 partecipante : 732 con punteggio: 500
+posizione: 24 partecipante : 851 con punteggio: 464
+posizione: 25 partecipante : 139 con punteggio: 458
+posizione: 26 partecipante : 687 con punteggio: 405
+posizione: 27 partecipante : 442 con punteggio: 390
+posizione: 28 partecipante : 542 con punteggio: 388
+posizione: 29 partecipante : 767 con punteggio: 381
+posizione: 30 partecipante : 239 con punteggio: 370
+posizione: 31 partecipante : 453 con punteggio: 360
+posizione: 32 partecipante : 549 con punteggio: 359
+posizione: 33 partecipante : 865 con punteggio: 357
+posizione: 34 partecipante : 93 con punteggio: 341
+posizione: 35 partecipante : 411 con punteggio: 317
+posizione: 36 partecipante : 798 con punteggio: 308
+posizione: 37 partecipante : 192 con punteggio: 270
+posizione: 38 partecipante : 907 con punteggio: 256
+posizione: 39 partecipante : 852 con punteggio: 253
+posizione: 40 partecipante : 895 con punteggio: 252
+posizione: 41 partecipante : 952 con punteggio: 250
+posizione: 42 partecipante : 232 con punteggio: 249
+posizione: 43 partecipante : 727 con punteggio: 239
+posizione: 44 partecipante : 490 con punteggio: 227
+posizione: 45 partecipante : 866 con punteggio: 223
+posizione: 46 partecipante : 805 con punteggio: 217
+posizione: 47 partecipante : 740 con punteggio: 213
+posizione: 48 partecipante : 754 con punteggio: 209

@@ -136,7 +136,7 @@ int punti; //punti mano al torneo del Palio/punti classifica nazionale.
 
     for (int k = 0 ; k< n_dati ; k++){
     data >> vettore[k].cod;
-    vettore[k].punti;
+    data >> vettore[k].punti;
     }
 
     data.close () ;
@@ -175,15 +175,15 @@ void print_array_giocatore_3_update (giocatore* dati , int n , int used) {
     cout  << endl ;
     for (int i = 0; i < n; i++) {
          if ( dati[i].is_pro == true ) {
-        cout  <<"{ " << dati[i].cod << " , pro" << dati[i].nmani << dati[i].tot_punt <<   " } "<< endl;         }
-        else { cout  <<"{ " << dati[i].cod << " , ama" << dati[i].nmani << dati[i].tot_punt <<   " } "<< endl;}
+        cout  <<"{ " << dati[i].cod << " , pro , " << dati[i].nmani << " , " << dati[i].tot_punt <<   " } "<< endl;         }
+        else { cout  <<"{ " << dati[i].cod << " , ama , " << dati[i].nmani << " , " << dati[i].tot_punt <<   " } "<< endl;}
 
     }
      cout  << endl ;
      for (int i = used-1 ; i > used - n -1 ; i--) {
                   if ( dati[i].is_pro == true ) {
-        cout  <<"{ " << dati[i].cod << " , pro" << dati[i].nmani << dati[i].tot_punt <<   " } "<< endl;    }
-        else { cout  <<"{ " << dati[i].cod << " , ama" << dati[i].nmani << dati[i].tot_punt <<   " } "<< endl;}
+        cout  <<"{ " << dati[i].cod << " , pro , " << dati[i].nmani << " , " << dati[i].tot_punt <<   " } "<< endl;    }
+        else { cout  <<"{ " << dati[i].cod << " , ama , " << dati[i].nmani << " , " << dati[i].tot_punt <<   " } "<< endl;}
         }
 
 }
@@ -245,8 +245,8 @@ void stampa_giocatore ( giocatore* dati , int d ){
     cout  << endl ;
     for (int i = 0; i < d; i++) {
          if ( dati[i].is_pro == true ) {
-        cout  <<"{ " << dati[i].cod << " , pro" << dati[i].nmani << dati[i].tot_punt <<   " } "<< endl;         }
-        else { cout  <<"{ " << dati[i].cod << " , ama" << dati[i].nmani << dati[i].tot_punt <<   " } "<< endl;}
+        cout  <<"{ " << dati[i].cod << " , pro , " << dati[i].nmani << " , " << dati[i].tot_punt <<   " } "<< endl;      }
+        else { cout  <<"{ " << dati[i].cod << " , ama  , " << dati[i].nmani << " , " << dati[i].tot_punt <<   " } "<< endl;}
     }
 }
 
