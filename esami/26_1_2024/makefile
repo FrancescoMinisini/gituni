@@ -11,7 +11,7 @@
 esame.o: esame.C
 	g++ -c esame.C 
 esame.x: esame.o  librerie/lib.o librerie/funzioni/funzioni.o
-	g++ esame.o  librerie/lib.o librerie/funzioni/funzioni.o -o esame.x
+	g++ esame.o  librerie/lib.o librerie/funzioni/funzioni.o -o esame.x 
 compila: esame.x
 
 esegui: esame.x

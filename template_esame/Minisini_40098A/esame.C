@@ -10,6 +10,10 @@ int main(){
     string directory = "";
     string directory = "";
     struct* dati ; 
+    
+        if( !(error_code == 0)) {
+        cout << endl << "we ce sta un problema" << endl;
+    }
     return 0;
 }
 /*
