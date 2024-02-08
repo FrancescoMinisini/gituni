@@ -886,8 +886,9 @@ void merge_sort_double(double data[], int init, int final){
 
 
 void merge_sort_decr(float data[], int i, int f);
+void merge_floats_decr(float data[], int i, int m, int f);
 
-void merge_floats(float data[], int i, int m, int f) {
+void merge_floats_decr(float data[], int i, int m, int f) {
     int j, k, z;
     float* tmp; 
     tmp = new float[f - i + 1];
