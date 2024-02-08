@@ -73,6 +73,16 @@
         "thread": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "es3.C": "cpp",
+        "es4.C": "cpp",
+        "es.1.C": "cpp",
+        "es2.C": "cpp",
+        "es1.C": "cpp",
+        "es5.C": "cpp",
+        "es6.C": "cpp",
+        "es7.C": "cpp",
+        "es9.C": "cpp",
+        "appunti.C": "cpp"
     }
 }
