@@ -4,6 +4,9 @@
         "iostream": "cpp",
         "stringhe.C": "cpp",
         "skiing.C": "cpp",
-        "Probabilità1.C": "cpp"
+        "Probabilità1.C": "cpp",
+        "esame.C": "cpp",
+        "funzioni.C": "cpp",
+        "lib.C": "cpp"
     }
 }

@@ -133,4 +133,3 @@ void remove (my_array_int* dati , int pos);
 void insert (my_array_int* dati, int value , int  pos );
 void deepCpy (my_array_int *p1, my_array_int*p2);
 
-void istogramma(float min, float max, int nbins, float data[], int used, char pixel, int max_n);
