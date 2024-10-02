@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Lezione2.dir/main.cpp.o CMakeFiles/Lezione2.dir/Models/Vettore.cpp.o -o Lezione2 

@@ -1,0 +1,3 @@
+/home/francesco/programmazione/gituni/2023/Lezione2/build/CMakeFiles/Lezione2.dir
+/home/francesco/programmazione/gituni/2023/Lezione2/build/CMakeFiles/edit_cache.dir
+/home/francesco/programmazione/gituni/2023/Lezione2/build/CMakeFiles/rebuild_cache.dir

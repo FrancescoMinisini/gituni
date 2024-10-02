@@ -3,32 +3,40 @@ using namespace std ;
 #include<cmath>
 #include<cstring>
 #include<fstream>
-#include"Models\Vettore"
+#include"Models/Vettore.h"
 
-int main(int argc, char** kargs){
-if (argc < 3) {
-    cout << "\nToo few parameters executing file: " << kargs[0];
-    return 1; // Exit if there are not enough arguments
-}
+int main ( ) {
 
-    string filePath = kargs[1];
-    ifstream data (filePath);
-if (!data) {
-    cout << "\ncannot open file: " << filePath;
-    return 1; // Exit if the file cannot be opened
-}
+  // costruttore senza argomenti ==>> crea un vettore di dimenione nulla 
 
-    double media = 0;
-    int count = 0;
-    int upperBound = stoi(kargs[2]);
-    double temp = 0; 
-    while ( !data.eof() && count < upperBound){
-        data>> temp;
-        media += temp/(double)upperBound;
-        count++;
-    }
-    cout<< "Result: "<<  media <<"\n";
+  Vettore vnull ;
+  cout << "Vettore vnull : dimensione = " << vnull.Count() << endl;
+  for ( unsigned int k = 0 ; k < vnull.Count() ; k++ ) cout << vnull.GetValue(k) << " " ;
+  cout << endl;
 
-    
-    return 0;
+  // construttore con intero : costruisco un OGGETTO di tipo vettore di lunghezza 10
+
+  Vettore v(10);
+  cout << "Vettore v : = dimensione = " << v.Count() << endl;
+  for ( unsigned int k = 0 ; k < v.Count() ; k++ ) cout << v.GetValue(k) << " " ;
+  cout << endl;
+  int comp = 3;
+  cout << "Componente " << comp << " = " << v.GetValue(comp) << endl;
+
+  v.SetComponent(comp,-999) ;
+
+  for ( unsigned int k = 0 ; k < v.Count() ; k++ ) cout << v.GetValue(k) << " " ;
+  cout << endl;
+
+  // anche come puntatore
+
+  Vettore * vp = new Vettore(10);
+  cout << "Vettore vp : = dimensione = " << vp->Count() << endl;
+  for ( unsigned int k = 0 ; k < vp->Count() ; k++ ) cout << vp->GetValue(k) << " " ;
+  cout << endl;    
+
+  delete vp;
+
+  return 0;
+
 }

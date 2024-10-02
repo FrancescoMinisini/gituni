@@ -1,43 +1,27 @@
-#ifndef __Vettore_h__
-#define __Vettore_h__
-#include<iostream>
+#ifndef __VETTORE_H__
+#define __VETTORE_H__
+
+#include <iostream>
+#include <exception>
+
 using namespace std;
 
-Vettore::Vettore(){
-    dim =0;
-    pointer = NULL;
-}
+class Vettore {
+public:
 
-Vettore::Vettore(int dim ){
-    dim = dim;
-    pointer = new double [dim];
-    for (int i = 0; i < dim; i++)
-    {
-        pointer[i] = 0;
-    }
-}
+    Vettore(); // Costruttore di default
+    Vettore(int); // Costruttore con dimensione
+    ~Vettore();
 
-class Vetttore {
-    public:
-        int Count () const {return dim;};
-        int GetValue (int index) const {
-            if (index>dim) throw new exception;
-            else return pointer[index];
-        };
-        void SetComponent(int, double);
-        Vettore();
-        Vettore(int);
-    private:
-        int dim;
-        double* pointer;
+    int Count() const { return dim; }
+    double GetValue(int index) const;
+    void SetComponent(int index, double value);
+    void Scambia(int, int);
+
+private:
+    int dim; // Dimensione del vettore
+    double* pointer; // Puntatore all'array dinamico
 };
 
-void SetComponent(int  index, double value) {
-    if ( index >= dim){
-
-
-
-    }
-}
-
 #endif
+ 
