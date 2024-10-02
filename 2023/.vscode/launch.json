@@ -8,12 +8,12 @@
         "name": "(gdb) Launch",
         "type": "cppdbg",
         "request": "launch",
-        "program": "/home/studenti/francescogiuseppe.minisini/Informatica/gituni/2023/Lezione1.exe",
-        "args": ["/home/studenti/francescogiuseppe.minisini/Informatica/gituni/2023/dati.txt","365"],
+        "program": "/home/francesco/programmazione/gituni/2023/Lezione1.exe",
+        "args": ["/home/francesco/programmazione/gituni/2023/dati.txt","365"],
         "stopAtEntry": false,
-        "cwd": "/home/studenti/francescogiuseppe.minisini/Informatica/gituni/2023",
+        "cwd": "/home/francesco/programmazione/gituni/2023",
         "environment": [],
-        "externalConsole": true,
+        "externalConsole": false,
         "MIMode": "gdb",
         "setupCommands": [
             {
@@ -28,6 +28,6 @@
             }
         ],
         "preLaunchTask": "C/C++: g++ build active file",
-        "miDebuggerPath": "/usr/bin/gdb",
+        "miDebuggerPath": "/usr/share/gdb",
     }]
 }

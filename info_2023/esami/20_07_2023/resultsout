@@ -1,0 +1,48 @@
+misure lette :300
+misure positive :130 con percentuale 43.3333%
+misure negative :151 con percentuale 50.3333%
+eta numero: 1 0.344282
+eta numero: 2 -0.0372174
+eta numero: 3 0.174227
+eta numero: 4 0.328703
+eta numero: 5 -0.037704
+
+{ 4.70348 , 0.513776 , -1.98055 , -2.62264 , 9 , -0.629339 } 
+{ 3.17574 , 0.303604 , 0.772695 , -1.6616 , 2 , -0.580757 } 
+{ 4.72843 , 0.286204 , -1.00733 , -2.21939 , 5 , -0.509264 } 
+
+{ 3.20919 , -1.81967 , -2.14843 , 2.28329 , -4 , 0.890184 } 
+{ 3.84265 , -0.312292 , -0.157667 , 2.25672 , -9 , 0.67351 } 
+{ 3.41751 , 2.2436 , -1.4228 , 1.92233 , 2 , 0.636473 } 
+
+stats totali 
+
+valore minimo -0.629339
+valore max 0.890184
+mediana -0.00205894
+media -0.00139467
+standard dev 0.225124
+
+stats pos 
+
+valore minimo -0.629339
+valore max 0.636473
+mediana -0.0279267
+media -0.0313314
+standard dev 0.220521
+
+stats neg 
+
+valore minimo -0.486268
+valore max 0.890184
+mediana 0.0127202
+media 0.0206862
+standard dev 0.230832
+
+stats neutro 
+
+valore minimo -0.322664
+valore max 0.350592
+mediana 0.0405051
+media 0.0279508
+standard dev 0.194562

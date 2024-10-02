@@ -12,7 +12,7 @@
                 "Lezione1.exe"
             ],
             "options": {
-                "cwd": "/home/studenti/francescogiuseppe.minisini/Informatica/gituni/2023"
+                "cwd": "/home/francesco/programmazione/gituni/2023"
             },
             "problemMatcher": [
                 "$gcc"

@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "sol_es2.C": "cpp",
+        "es1.C": "cpp",
+        "sol_es5.C": "cpp",
+        "sel_annidata.C": "cpp",
+        "es2.C": "cpp",
+        "es3.C": "cpp",
+        "es4.C": "cpp",
+        "sol_es4.C": "cpp",
+        "es5.C": "cpp"
+    }
+}
