@@ -2,6 +2,10 @@
     "files.associations": {
         "esame.C": "cpp",
         "lib.C": "cpp",
-        "Lezione1.C": "cpp"
+        "Lezione1.C": "cpp",
+        "vector": "cpp",
+        "ostream": "cpp",
+        "typeinfo": "cpp",
+        "cmath": "cpp"
     }
 }
