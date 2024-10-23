@@ -7,5 +7,6 @@
         "ostream": "cpp",
         "typeinfo": "cpp",
         "cmath": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/francesco/programmazione/gituni/2023/Lezione4/Esercizio1"
 }
