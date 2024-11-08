@@ -187,7 +187,8 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: \
  /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
  /usr/include/c++/11/bits/invoke.h \
  /usr/include/c++/11/bits/quoted_string.h /usr/include/c++/11/sstream \
- /usr/include/c++/11/bits/sstream.tcc \
+ /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/cfloat \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
  /snap/root-framework/936/usr/local/include/TH1F.h \
  /snap/root-framework/936/usr/local/include/TH1.h \
  /snap/root-framework/936/usr/local/include/TAxis.h \
@@ -267,8 +268,6 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: \
  /snap/root-framework/936/usr/local/include/TVectorFfwd.h \
  /snap/root-framework/936/usr/local/include/TVectorDfwd.h \
  /snap/root-framework/936/usr/local/include/TFitResultPtr.h \
- /usr/include/c++/11/cfloat \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
  /snap/root-framework/936/usr/local/include/TApplication.h \
  /snap/root-framework/936/usr/local/include/TQObject.h \
  /snap/root-framework/936/usr/local/include/TList.h \
@@ -326,4 +325,11 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: \
  /usr/include/c++/11/math.h \
  /snap/root-framework/936/usr/local/include/Math/Types.h \
  /snap/root-framework/936/usr/local/include/Math/ParamFunctor.h \
- /snap/root-framework/936/usr/local/include/TAxis.h
+ /snap/root-framework/936/usr/local/include/TAxis.h \
+ /snap/root-framework/936/usr/local/include/TStyle.h \
+ /snap/root-framework/936/usr/local/include/TAttText.h \
+ /snap/root-framework/936/usr/local/include/TColor.h \
+ /snap/root-framework/936/usr/local/include/TLegend.h \
+ /snap/root-framework/936/usr/local/include/TPave.h \
+ /snap/root-framework/936/usr/local/include/TBox.h \
+ /snap/root-framework/936/usr/local/include/TLine.h

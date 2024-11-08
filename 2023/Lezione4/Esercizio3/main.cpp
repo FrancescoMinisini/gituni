@@ -3,6 +3,7 @@
 #include <cmath>
 #include <fstream>
 #include <iomanip>
+#include <cfloat>
 
 #include "TH1F.h"
 #include "TApplication.h"
@@ -10,117 +11,166 @@
 #include "TCanvas.h"
 #include "TF1.h"
 #include "TAxis.h"
+#include "TStyle.h"
+#include "TLegend.h"
+#include "TLine.h"
 
 using namespace std;
 
 // ===========================================================
-// Read data from file and store them in a vector
+// Funzione per leggere i dati da un file e salvarli in un vettore
 // ===========================================================
+vector<double> ParseFile(const string& filename) {
+    ifstream fin(filename.c_str());
+    vector<double> data;
+    double val;
 
-vector<double> ParseFile( string filename ) {
+    if (!fin) {
+        cerr << "Impossibile aprire il file " << filename << endl;
+        exit(EXIT_FAILURE);
+    }
 
-  ifstream fin(filename.c_str());
+    while (fin >> val)
+        data.push_back(val);
 
-  vector<double> v;
-  double val;
-
-  if ( !fin ) {
-    cout << "Cannot open file " << filename << endl;
-    exit(11);
-  };
-
-  while ( fin >> val ) v.push_back(val);
-
-  fin.close();
-  return v;
+    fin.close();
+    return data;
 }
 
-// ===========================================================                                                                                                                                              
-// Compute S(q)                                                                                                                                                             
-// ===========================================================     
-
-double fun ( double q , vector<double> params ) {
-  double sum = 0;
-  for ( int k = 0 ; k < params.size() ; k++ ) sum+= pow (  q - params[k]/(round(params[k]/q)) , 2 ) ;
-  return sum;
+// ===========================================================
+// Funzione per calcolare S(q)
+// ===========================================================
+double SFunction(double q, const vector<double>& charges) {
+    double sum = 0;
+    for (const auto& charge : charges) {
+        double n = round(charge / q);
+        sum += pow(q - charge / n, 2);
+    }
+    return sum;
 }
 
-// ===========================================================                                                                                                                                                
-// Compute qmin                                                                                                                                                                                        
-// ===========================================================           
-
-double deriv ( double qmin , vector<double> params) {
-  double sum = 0;
-  for ( int k = 0 ; k < params.size() ; k++ ) sum+= (  params[k]/ round(params[k]/qmin) );  
-  return sum/params.size() ;
+// ===========================================================
+// Funzione per calcolare q_min (miglior stima della carica elementare)
+// ===========================================================
+double ComputeQMin(double qmin, const vector<double>& charges) {
+    double sum = 0;
+    for (const auto& charge : charges) {
+        double n = round(charge / qmin);
+        sum += charge / n;
+    }
+    return sum / charges.size();
 }
 
-// ===========================================================                                                                                                                                                      
-// This can be used to actually minimse S(q)                                                                                                                                                                    
-// ===========================================================        
-
-/*
-double funROOT ( double* q , double * params ) { 
-  double sum = 0;
-  for ( int k = 0 ; k < 64 ; k++ ) sum+= pow (  q[0] - params[k] / (round(params[k]/q[0])), 2 ) ;
-  return sum;
+// ===========================================================
+// Funzione per il fit con ROOT (usata da TF1)
+// ===========================================================
+double SFunctionROOT(double* q, double* params) {
+    double sum = 0;
+    int numCharges = static_cast<int>(params[0]);
+    for (int k = 0; k < numCharges; ++k) {
+        double charge = params[k + 1];
+        double n = round(charge / q[0]);
+        sum += pow(q[0] - charge / n, 2);
+    }
+    return sum;
 }
-*/
 
-// ===========================================================                                                                                                                                                      
-// This code estimates the best value of qe from a set of 
-// measurements (drop charges)                                                                                                                                                                       
-// ===========================================================      
+// ===========================================================
+// Funzione principale
+// ===========================================================
+int main(int argc, char* argv[]) {
+    TApplication app("app", &argc, argv);
 
-int main() {
+    // Imposta lo stile generale dei grafici
+    gStyle->SetOptStat(0);
+    gStyle->SetPalette(kRainBow);
 
-  TApplication app(0,0,0);
+    // Legge le cariche dal file
+    vector<double> charges = ParseFile("../data_millikan.dat");
 
-  // read charges from file
+    // Stima della carica elementare
+    double qmin = 0.0;
+    double sqmin = DBL_MAX;
+    double qStart = 1.51e-19;
+    double qEnd = 1.75e-19;
+    double qStep = 0.001e-19;
 
-  vector<double> charges = ParseFile("../data_millikan.dat");
+    TGraph sGraph;
+    int counter = 0;
 
-  // show charges distribution
+    for (double q = qStart; q <= qEnd; q += qStep) {
+        double sValue = SFunction(q, charges);
+        sGraph.SetPoint(counter, q, sValue);
+        if (sValue < sqmin) {
+            sqmin = sValue;
+            qmin = q;
+        }
+        ++counter;
+    }
 
-  TCanvas can1 ;
-  can1.cd();
-  TH1F histo("cariche","Charges distribution", 100, 0 , 20E-19);
-  for ( auto i = 0; i < charges.size() ; i++ ) histo.Fill(charges[i]);
-  histo.Draw();  
-  histo.GetXaxis()->SetTitle("Charge [C]");
+    cout << "Trovato minimo approssimato a q = " << qmin << " C" << endl;
 
-  TGraph g ;
-  int counter = 0;
-  double qmin = 0;
-  double sqmin = DBL_MAX;
+    // Raffina la stima usando il metodo derivativo
+    double elementaryCharge = ComputeQMin(qmin, charges);
+    cout << "Carica elementare stimata: " << elementaryCharge << " C" << endl;
 
-  for ( double value = 1.4e-19 ; value < 1.8E-19 ; value+=0.001E-19 ) {
-    g.SetPoint(counter, value,fun( value , charges ) );
-    if ( fun( value , charges )  < sqmin ) { sqmin =  fun( value , charges ) ; qmin = value ; }  ;
-    counter++;
-  }
+    // Calcola l'incertezza statistica
+    double sAtQ = SFunction(elementaryCharge, charges);
+    double uncertainty = sqrt(sAtQ / (charges.size() * (charges.size() - 1)));
+    cout << "Incertezza: " << uncertainty << " C (solo statistica)" << endl;
 
-  cout << "Found approximate minimum at q = " << qmin << endl;
+    // Crea l'istogramma dei multipli della carica elementare
+    TCanvas canvasHistogram("canvasHistogram", "Istogramma dei Multipli di Carica");
+    canvasHistogram.cd();
 
-  TCanvas can2;
-  can2.cd();
-  g.Draw("ALP");
-  g.SetMarkerStyle(20);
-  g.SetMarkerSize(0.5);
-  g.SetTitle("Best charge value");
-  g.GetXaxis()->SetTitle("Charge (C)") ;
-  g.GetYaxis()->SetTitle("S(q) (C^{2})") ;
+    int numBins = 10;
+    double minMultiple = 0.5;
+    double maxMultiple = 10.5;
 
-  /*
-  TF1 myfun( "charge",funROOT,1.5e-19 , 1.7E-19, 64); 
-  for ( int k = 0 ; k < 64; k++ ) myfun.SetParameter(k, charges[k]); 
-  cout << myfun.GetMinimumX() << endl ;
-  */
+    TH1F histoMultiples("histoMultiples", "Distribuzione dei Multipli di Carica", numBins, minMultiple, maxMultiple);
 
-  double mycharge = deriv(qmin, charges ) ;
-  double uncer = sqrt(  fun(mycharge, charges) / ( charges.size() * (charges.size()-1))   ); 
-  cout << "Measured charge = " << mycharge << " +/- " << uncer << "(stat only)" << endl;
+    for (const auto& charge : charges) {
+        double multiple = charge / elementaryCharge;
+        histoMultiples.Fill(multiple);
+    }
 
-  app.Run();
+    // histoMultiples.SetFillColor(kAzure - 4);
+    histoMultiples.SetLineColor(kAzure);
+    histoMultiples.SetTitle("Distribuzione dei Multipli della Carica Elementare");
+    histoMultiples.GetXaxis()->SetTitle("Multiplo della Carica Elementare (q / e)");
+    histoMultiples.GetYaxis()->SetTitle("Conteggi");
+    histoMultiples.Draw();
 
+    canvasHistogram.SaveAs("../IstogrammaMultipliCarica.pdf");
+
+    // Grafico di S(q) vs q
+    TCanvas canvasSGraph("canvasSGraph", "S(q) vs q");
+    canvasSGraph.cd();
+
+    sGraph.SetTitle("S(q) vs q");
+    sGraph.GetXaxis()->SetTitle("q (C)");
+    sGraph.GetYaxis()->SetTitle("S(q) (C^{2})");
+    sGraph.SetMarkerStyle(20);
+    sGraph.SetMarkerSize(0.8);
+    sGraph.SetMarkerColor(kRed);
+    sGraph.SetLineColor(kRed);
+    sGraph.Draw("ALP");
+
+    // Evidenzia il minimo trovato
+    TLine minLine(qmin, -4, qmin, sqmin);
+    minLine.SetLineStyle(2);
+    minLine.SetLineColor(kBlue);
+    minLine.Draw();
+
+    TLegend legend(0.6, 0.7, 0.88, 0.85);
+    legend.AddEntry(&sGraph, "S(q)", "l");
+    legend.AddEntry(&minLine, Form("Minimo a q = %.2e C", qmin), "l");
+    legend.Draw();
+
+    canvasSGraph.SaveAs("../GraficoSFunction.pdf");
+
+    // Esegue l'applicazione
+    app.Run();
+
+    return 0;
 }

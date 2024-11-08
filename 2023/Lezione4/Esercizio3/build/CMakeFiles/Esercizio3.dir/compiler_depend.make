@@ -235,6 +235,8 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/quoted_string.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/cfloat \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
   /snap/root-framework/936/usr/local/include/TH1F.h \
   /snap/root-framework/936/usr/local/include/TH1.h \
   /snap/root-framework/936/usr/local/include/TAxis.h \
@@ -322,8 +324,6 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
   /snap/root-framework/936/usr/local/include/TVectorFfwd.h \
   /snap/root-framework/936/usr/local/include/TVectorDfwd.h \
   /snap/root-framework/936/usr/local/include/TFitResultPtr.h \
-  /usr/include/c++/11/cfloat \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
   /snap/root-framework/936/usr/local/include/TApplication.h \
   /snap/root-framework/936/usr/local/include/TQObject.h \
   /snap/root-framework/936/usr/local/include/TList.h \
@@ -386,8 +386,21 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/math.h \
   /snap/root-framework/936/usr/local/include/Math/Types.h \
   /snap/root-framework/936/usr/local/include/Math/ParamFunctor.h \
-  /snap/root-framework/936/usr/local/include/TAxis.h
+  /snap/root-framework/936/usr/local/include/TAxis.h \
+  /snap/root-framework/936/usr/local/include/TStyle.h \
+  /snap/root-framework/936/usr/local/include/TAttText.h \
+  /snap/root-framework/936/usr/local/include/TColor.h \
+  /snap/root-framework/936/usr/local/include/TLegend.h \
+  /snap/root-framework/936/usr/local/include/TPave.h \
+  /snap/root-framework/936/usr/local/include/TBox.h \
+  /snap/root-framework/936/usr/local/include/TLine.h
 
+
+/snap/root-framework/936/usr/local/include/TLine.h:
+
+/snap/root-framework/936/usr/local/include/TPave.h:
+
+/snap/root-framework/936/usr/local/include/TStyle.h:
 
 /usr/include/c++/11/math.h:
 
@@ -396,6 +409,8 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
 /snap/root-framework/936/usr/local/include/TMath.h:
 
 /snap/root-framework/936/usr/local/include/Math/Types.h:
+
+/snap/root-framework/936/usr/local/include/TLegend.h:
 
 /usr/include/c++/11/bits/list.tcc:
 
@@ -461,8 +476,6 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
 
 /snap/root-framework/936/usr/local/include/TApplication.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
-
 /snap/root-framework/936/usr/local/include/TVectorDfwd.h:
 
 /snap/root-framework/936/usr/local/include/TArrayS.h:
@@ -488,6 +501,8 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
 /usr/include/c++/11/memory:
+
+/snap/root-framework/936/usr/local/include/TAttText.h:
 
 /snap/root-framework/936/usr/local/include/ROOT/RStringView.hxx:
 
@@ -527,6 +542,8 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
 
 /snap/root-framework/936/usr/local/include/TGenericClassInfo.h:
 
+/snap/root-framework/936/usr/local/include/TColor.h:
+
 /usr/include/c++/11/bits/atomic_lockfree_defines.h:
 
 /usr/include/c++/11/bits/atomic_base.h:
@@ -542,6 +559,8 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
 /snap/root-framework/936/usr/local/include/TPad.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
 
 /usr/include/c++/11/bits/shared_ptr.h:
 
@@ -635,10 +654,6 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/cctype:
 
-/usr/include/c++/11/cfloat:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
 /snap/root-framework/936/usr/local/include/TDictionary.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
@@ -731,6 +746,12 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/stringfwd.h:
 
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/time.h:
+
 /usr/include/c++/11/bits/stl_multimap.h:
 
 ../main.cpp:
@@ -807,8 +828,6 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/ostream_insert.h:
 
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
 /usr/include/c++/11/ostream:
 
 /usr/include/c++/11/bits/unique_ptr.h:
@@ -868,6 +887,8 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
 /usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/snap/root-framework/936/usr/local/include/TBox.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
@@ -1117,6 +1138,14 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/sstream:
 
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/include/c++/11/cfloat:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
 /usr/include/c++/11/bits/cpp_type_traits.h:
 
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
@@ -1135,16 +1164,8 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
 
 /snap/root-framework/936/usr/local/include/strlcpy.h:
 
-/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
 
 /usr/include/c++/11/bits/exception_defines.h:
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
-
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-/usr/include/time.h:
-
-/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:

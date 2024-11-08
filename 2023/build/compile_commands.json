@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/francesco/programmazione/gituni/2023/build",
+  "command": "/usr/bin/c++  -I/snap/root-framework/936/usr/local/include -g -std=gnu++17 -o CMakeFiles/Esercizio1.dir/main.cpp.o -c /home/francesco/programmazione/gituni/2023/Lezione4/Esercizio1/main.cpp",
+  "file": "/home/francesco/programmazione/gituni/2023/Lezione4/Esercizio1/main.cpp"
+}
+]
