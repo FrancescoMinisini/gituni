@@ -35,7 +35,7 @@ int main (int argc, char** argv) {
   TCanvas canvas("canvas", "Errore di Integrazione", 800, 600);
   TGraph g_errore;
 
-  double  h = 0;
+  double  h = 0, x1 = 0, x2 = 0, y1 = 0, y2 = 0;
   unsigned int n_points = 10;
   for (unsigned int k = 0; k < n_points; k++) {
     h = (b - a) / nstep; 
@@ -43,8 +43,16 @@ int main (int argc, char** argv) {
     I.Print();
     g_errore.SetPoint(k, h, I.GetSigma());
     nstep *= 2;
+    if(k == 6){
+      x1 = h;
+      y1 = I.GetSigma();
+    } else if (k == 8) {
+      x2 = h;
+      y2 = I.GetSigma();
+    }
   }
 
+  cout << "Espontente: "<< LeggeDiPotenza(x1,y1,x2,y2)<< endl;
   // Configura il grafico per l'errore
   g_errore.SetTitle("Errore di Integrazione; Passo h; Errore Assoluto");
   g_errore.SetLineColor(kBlue);

@@ -61,5 +61,8 @@ class Midpoint : public Integral {
   };
 
 };
+double LeggeDiPotenza(double x1,double y1,double x2,double y2){
+  return log(fabs(y1/y2))/log(fabs(x1/x2));
+}
 
 #endif // __INTEGRAL_H__                                   

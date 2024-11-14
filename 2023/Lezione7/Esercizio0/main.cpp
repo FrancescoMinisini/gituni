@@ -39,9 +39,9 @@ int main (int argc, char** argv) {
   TCanvas canvas("canvas", "Errore di Integrazione", 800, 600);
   TGraph g_errore;
 
-  double Iv = 1.0;  // Valore atteso dell'integrale
+  double Iv = 1.0, x1,y1,x2,y2;  // Valore atteso dell'integrale
   double I = 0, err = 0, h = 0;
-  unsigned int n_points = 20;
+  unsigned int n_points = 10;
   for (unsigned int k = 0; k < n_points; k++) {
     h = (b - a) / nstep; 
     I = myInt.Integra(nstep, f);
@@ -49,8 +49,16 @@ int main (int argc, char** argv) {
     cout << "Passi: " << setw(20) << nstep << " Errore: " << setw(20) << err << endl;
     g_errore.SetPoint(k, h, err);
     nstep *= 2;
+     if(k == 6){
+      x1 = h;
+      y1 = err;
+    } else if (k == 8) {
+      x2 = h;
+      y2 = err;
+    }
   }
 
+  cout << "Espontente: "<< LeggeDiPotenza(x1,y1,x2,y2)<< endl;
   // Configura il grafico per l'errore
   g_errore.SetTitle("Errore di Integrazione; Passo h; Errore Assoluto");
   g_errore.SetLineColor(kBlue);
