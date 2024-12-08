@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Nome del progetto
-project(Esercizio0)
+project(Esercizio1)
 
 # Imposta lo standard C++
 set(CMAKE_CXX_STANDARD 17)
@@ -19,10 +19,10 @@ find_package(Armadillo REQUIRED)
 set(SOURCES main.cpp Models/FunzioneBase.h)
 
 # Aggiungi l'eseguibile
-add_executable(Esercizio0 ${SOURCES})
+add_executable(Esercizio1 ${SOURCES})
 
 # Collega le librerie ROOT e Armadillo all'eseguibile
-target_link_libraries(Esercizio0 
+target_link_libraries(Esercizio1 
     /snap/root-framework/936/usr/local/lib/libCore.so 
     /snap/root-framework/936/usr/local/lib/libHist.so 
     /snap/root-framework/936/usr/local/lib/libRIO.so 
@@ -32,4 +32,4 @@ target_link_libraries(Esercizio0
 )
 
 # Include Armadillo nei percorsi di include
-target_include_directories(Esercizio0 PRIVATE ${ARMADILLO_INCLUDE_DIRS})
+target_include_directories(Esercizio1 PRIVATE ${ARMADILLO_INCLUDE_DIRS})

@@ -33,7 +33,5 @@ int main (int argc, char** argv) {
   auto result = myInt.Integra(prec,f);
   result.Print();
 
-
-
   return 0;
 }

@@ -1,0 +1,3 @@
+/home/francesco/programmazione/gituni/2023/Lezione10/Esercizio2/AnalisiDati/build/CMakeFiles/AnalisiDati.dir
+/home/francesco/programmazione/gituni/2023/Lezione10/Esercizio2/AnalisiDati/build/CMakeFiles/edit_cache.dir
+/home/francesco/programmazione/gituni/2023/Lezione10/Esercizio2/AnalisiDati/build/CMakeFiles/rebuild_cache.dir
