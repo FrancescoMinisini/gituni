@@ -44,6 +44,28 @@ public:
   };
 };
 
+class IntegratoreHitOrMiss : public IntegraleMC {
+public:
+    IntegratoreHitOrMiss(unsigned int seed, double fmax ,double punti = 0)
+        : IntegraleMC(seed, punti), _fmax(fmax) { }
+
+    virtual double Integra(const FunzioneBase& f, double inf, double sup) override {
+        int count = 0;
+        double x, y;
+        for (unsigned int i = 0; i < _punti; i++) {
+            x = _gen.Unif(inf, sup);
+            y = _gen.Unif(0, _fmax);
+            if (f(x) > y) {
+                count++;
+            }
+        }
+        return (sup - inf) * _fmax * count / _punti;
+    }
+
+private:
+    double _fmax;
+};
+
 
 double LeggeDiPotenza(double x1,double y1,double x2,double y2){
   return log(fabs(y1/y2))/log(fabs(x1/x2));

@@ -2,9 +2,9 @@
 #include "TCanvas.h"
 #include "TH1F.h"
 #include "TGraph.h"
-#include "../Models/RandomGen.h"
-#include "../Models/IntegralMc.h"
-#include "../Models/FunzioneBase.h"
+#include "Models/RandomGen.h"
+#include "Models/IntegralMc.h"
+#include "Models/FunzioneBase.h"
 
 #include <iostream>
 #include <fstream>
