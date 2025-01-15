@@ -1,0 +1,3 @@
+# Ignora tutto nella cartella nascosta .vscode, se presente
+.vscode/
+build/

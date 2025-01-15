@@ -18,6 +18,9 @@ public:
     void SetComponent(int index, double value);
     void Scambia(int, int);
 
+    // Dichiarazione operatore di assegnamento
+    Vettore& operator=(const Vettore& V);
+
 private:
     int dim; // Dimensione del vettore
     double* pointer; // Puntatore all'array dinamico
