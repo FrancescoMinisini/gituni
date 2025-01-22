@@ -212,4 +212,126 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: \
  /home/francesco/programmazione/gituni/2023/Lezione5/Esercizio3/Models/CampoVettoriale.h \
  /home/francesco/programmazione/gituni/2023/Lezione5/Esercizio3/Models/Posizione.h \
  /home/francesco/programmazione/gituni/2023/Lezione5/Esercizio3/Models/PuntoMateriale.h \
- /home/francesco/programmazione/gituni/2023/Lezione5/Esercizio3/Models/CampoVettoriale.h
+ /home/francesco/programmazione/gituni/2023/Lezione5/Esercizio3/Models/CampoVettoriale.h \
+ /snap/root-framework/936/usr/local/include/TH1F.h \
+ /snap/root-framework/936/usr/local/include/TH1.h \
+ /snap/root-framework/936/usr/local/include/TAxis.h \
+ /snap/root-framework/936/usr/local/include/TNamed.h \
+ /snap/root-framework/936/usr/local/include/TObject.h \
+ /snap/root-framework/936/usr/local/include/Rtypes.h \
+ /snap/root-framework/936/usr/local/include/RtypesCore.h \
+ /snap/root-framework/936/usr/local/include/ROOT/RConfig.hxx \
+ /snap/root-framework/936/usr/local/include/ROOT/../RVersion.h \
+ /snap/root-framework/936/usr/local/include/ROOT/../ROOT/RVersion.hxx \
+ /snap/root-framework/936/usr/local/include/RConfigure.h \
+ /snap/root-framework/936/usr/local/include/DllImport.h \
+ /usr/include/c++/11/cstddef \
+ /snap/root-framework/936/usr/local/include/strtok.h \
+ /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
+ /snap/root-framework/936/usr/local/include/strlcpy.h \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h \
+ /snap/root-framework/936/usr/local/include/snprintf.h \
+ /usr/include/c++/11/atomic /usr/include/c++/11/bits/atomic_base.h \
+ /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+ /snap/root-framework/936/usr/local/include/TGenericClassInfo.h \
+ /snap/root-framework/936/usr/local/include/TSchemaHelper.h \
+ /snap/root-framework/936/usr/local/include/TIsAProxy.h \
+ /snap/root-framework/936/usr/local/include/TVirtualIsAProxy.h \
+ /snap/root-framework/936/usr/local/include/TStorage.h \
+ /snap/root-framework/936/usr/local/include/TVersionCheck.h \
+ /snap/root-framework/936/usr/local/include/RVersion.h \
+ /snap/root-framework/936/usr/local/include/TString.h \
+ /snap/root-framework/936/usr/local/include/TMathBase.h \
+ /snap/root-framework/936/usr/local/include/ROOT/RStringView.hxx \
+ /snap/root-framework/936/usr/local/include/ROOT/TypeTraits.hxx \
+ /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
+ /usr/include/c++/11/bits/shared_ptr.h \
+ /usr/include/c++/11/bits/shared_ptr_base.h \
+ /usr/include/c++/11/bits/allocated_ptr.h \
+ /usr/include/c++/11/ext/concurrence.h \
+ /usr/include/c++/11/bits/shared_ptr_atomic.h \
+ /usr/include/c++/11/backward/auto_ptr.h \
+ /usr/include/c++/11/pstl/glue_memory_defs.h /usr/include/c++/11/cstdarg \
+ /snap/root-framework/936/usr/local/include/TAttAxis.h \
+ /snap/root-framework/936/usr/local/include/TArrayD.h \
+ /snap/root-framework/936/usr/local/include/TArray.h \
+ /snap/root-framework/936/usr/local/include/TAttLine.h \
+ /snap/root-framework/936/usr/local/include/TAttFill.h \
+ /snap/root-framework/936/usr/local/include/TAttMarker.h \
+ /snap/root-framework/936/usr/local/include/TArrayC.h \
+ /snap/root-framework/936/usr/local/include/TArrayS.h \
+ /snap/root-framework/936/usr/local/include/TArrayI.h \
+ /snap/root-framework/936/usr/local/include/TArrayF.h \
+ /snap/root-framework/936/usr/local/include/Foption.h \
+ /snap/root-framework/936/usr/local/include/ROOT/EExecutionPolicy.hxx \
+ /snap/root-framework/936/usr/local/include/TVectorFfwd.h \
+ /snap/root-framework/936/usr/local/include/TVectorDfwd.h \
+ /snap/root-framework/936/usr/local/include/TFitResultPtr.h \
+ /usr/include/c++/11/cfloat \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
+ /snap/root-framework/936/usr/local/include/TApplication.h \
+ /snap/root-framework/936/usr/local/include/TQObject.h \
+ /snap/root-framework/936/usr/local/include/TList.h \
+ /snap/root-framework/936/usr/local/include/TSeqCollection.h \
+ /snap/root-framework/936/usr/local/include/TCollection.h \
+ /snap/root-framework/936/usr/local/include/TIterator.h \
+ /snap/root-framework/936/usr/local/include/TVirtualRWMutex.h \
+ /snap/root-framework/936/usr/local/include/TVirtualMutex.h \
+ /snap/root-framework/936/usr/local/include/ROOT/RRangeCast.hxx \
+ /snap/root-framework/936/usr/local/include/ROOT/RSpan.hxx \
+ /snap/root-framework/936/usr/local/include/ROOT/span.hxx \
+ /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
+ /usr/include/c++/11/cassert /usr/include/assert.h \
+ /snap/root-framework/936/usr/local/include/TVirtualQConnection.h \
+ /snap/root-framework/936/usr/local/include/TInterpreter.h \
+ /snap/root-framework/936/usr/local/include/TDataType.h \
+ /snap/root-framework/936/usr/local/include/TDictionary.h \
+ /snap/root-framework/936/usr/local/include/ESTLType.h \
+ /snap/root-framework/936/usr/local/include/TInterpreterValue.h \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/bits/stl_map.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /snap/root-framework/936/usr/local/include/TApplicationImp.h \
+ /snap/root-framework/936/usr/local/include/TGraph.h \
+ /snap/root-framework/936/usr/local/include/TCanvas.h \
+ /snap/root-framework/936/usr/local/include/TPad.h \
+ /snap/root-framework/936/usr/local/include/TVirtualPad.h \
+ /snap/root-framework/936/usr/local/include/TAttPad.h \
+ /snap/root-framework/936/usr/local/include/GuiTypes.h \
+ /usr/include/c++/11/climits \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+ /snap/root-framework/936/usr/local/include/Buttons.h \
+ /snap/root-framework/936/usr/local/include/TAttBBox2D.h \
+ /snap/root-framework/936/usr/local/include/TAttCanvas.h \
+ /snap/root-framework/936/usr/local/include/TF1.h \
+ /snap/root-framework/936/usr/local/include/RConfigure.h \
+ /snap/root-framework/936/usr/local/include/TFormula.h \
+ /snap/root-framework/936/usr/local/include/TBits.h \
+ /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
+ /usr/include/c++/11/bits/list.tcc \
+ /snap/root-framework/936/usr/local/include/Math/Types.h \
+ /snap/root-framework/936/usr/local/include/RtypesCore.h \
+ /snap/root-framework/936/usr/local/include/TMethodCall.h \
+ /snap/root-framework/936/usr/local/include/TF1AbsComposition.h \
+ /snap/root-framework/936/usr/local/include/TMath.h \
+ /snap/root-framework/936/usr/local/include/TError.h \
+ /snap/root-framework/936/usr/local/include/DllImport.h \
+ /usr/include/c++/11/math.h \
+ /snap/root-framework/936/usr/local/include/Math/Types.h \
+ /snap/root-framework/936/usr/local/include/Math/ParamFunctor.h \
+ /snap/root-framework/936/usr/local/include/TAxis.h

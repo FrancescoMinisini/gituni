@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-  FunzioneBase *par1 = new Parabola(1, 2, 3);
+  FunzioneBase *par1 = new Parabola(1, 0, -1);
   par1->Plot("Plotting");
   return 0;
 }

@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/Esercizio2.dir/main.cpp.o -o Esercizio2 
+/usr/bin/c++ CMakeFiles/Esercizio2.dir/main.cpp.o -o Esercizio2   -L/snap/root-framework/936/usr/local/lib  -Wl,-rpath,/snap/root-framework/936/usr/local/lib /snap/root-framework/936/usr/local/lib/libCore.so /snap/root-framework/936/usr/local/lib/libHist.so /snap/root-framework/936/usr/local/lib/libRIO.so /snap/root-framework/936/usr/local/lib/libGraf.so /snap/root-framework/936/usr/local/lib/libGpad.so 

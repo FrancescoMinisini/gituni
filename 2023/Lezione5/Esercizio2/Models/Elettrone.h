@@ -1,5 +1,5 @@
-#ifndef PARTICELLA_H
-#define PARTICELLA_H
+#ifndef ELETTRONE_H
+#define ELETTRONE_H
 
 #include"Particella.h"
 #include<iostream>

@@ -6,7 +6,6 @@
 #include "TCanvas.h"
 #include "TAxis.h"
 #include "TApplication.h"
-#include "Integral.h"
 #include "Measure.h"
 #include <string>
 #include <functional>  
@@ -29,6 +28,7 @@ public:
         {
             double x = initialValue + i * step;
             double y = Eval(x);
+            // cout <<"X   " << x<< "   Y "<<y << endl;
             x_values[i] = x;
             y_values[i] = y;
         }
@@ -40,9 +40,9 @@ public:
 
         graph.SetTitle("Parabola;X values;Y values");
         graph.SetLineColor(kBlue);
-        graph.SetLineWidth(2);
+        graph.SetLineWidth(1);
         graph.SetMarkerStyle(21);
-        graph.SetMarkerSize(0.8);
+        graph.SetMarkerSize(0.3);
         graph.SetMarkerColor(kRed);
         canvas.SaveAs(("../" + name + ".pdf").c_str());
     }
@@ -96,28 +96,6 @@ private:
     std::function<double(double)> _f;
 };
 
-class Gaussiana : public FunzioneBase {
-public:
-    Gaussiana(double mu, double sigma) : _media(mu), _sigma(sigma) {
-        _f = [this](double x) {
-            return (1.0 / (_sigma * std::sqrt(2 * M_PI))) * std::exp(-0.5 * std::pow((x - _media) / _sigma, 2));
-        };
-    }
 
-    double Eval(double x) const {
-        return _f(x);
-    }
-
-    double Probability(double x, double prec) const {
-        Trapezi integral(_media, x); 
-        Measure result =  integral.Integra(prec, _f); 
-        return  result.GetValue();
-    }
-
-private:
-    std::function<double(double)> _f; // Funzione gaussiana
-    double _media;
-    double _sigma;
-};
 
 #endif

@@ -9,9 +9,9 @@ public:
     Solutore() {}
     Solutore(double prec) : _prec(prec) {}
     Solutore(double prec, unsigned int nmax) : _prec(prec), _nmax(nmax) {}
-    Solutore(double xmin, double xmax) : _xmin(xmin), _xmax(xmax) {}
-    Solutore(double xmin, double xmax, double prec) : _xmin(xmin), _xmax(xmax), _prec(prec) {}
-    Solutore(double xmin, double xmax, double prec, unsigned int nmax) : _xmin(xmin), _xmax(xmax), _prec(prec), _nmax(nmax) {}
+    Solutore(double xmin, double xmax) { if(xmax>xmin) {_xmax = xmax; _xmin = xmin;} else {_xmin = xmax; _xmax = xmin;} }
+    Solutore(double xmin, double xmax, double prec) :  _prec(prec) {if(xmax>xmin) {_xmax = xmax; _xmin = xmin;} else {_xmin = xmax; _xmax = xmin;} }
+    Solutore(double xmin, double xmax, double prec, unsigned int nmax) :  _prec(prec), _nmax(nmax) {if(xmax>xmin) {_xmax = xmax; _xmin = xmin;} else {_xmin = xmax; _xmax = xmin;} }
     virtual ~Solutore() {}
 
     virtual Measure CercaZeri(double xmin, double xmax, const FunzioneBase* f) = 0;

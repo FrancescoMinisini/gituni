@@ -16,7 +16,7 @@ int main()
   int nmax = 10000;
 
   TCanvas can2("Uniforme", "Uniforme");
-  can2.Divide(4, 1);
+  can2.Divide(2, 2);
 
   TH1F unifHist("Uniforme", "Distribuzione Uniforme; x [AU]; N", 70, 4, 11);
   TH1F expHist("Esponenziale", "Distribuzione Esponenziale; x [AU]; N", 70, 0, 10);

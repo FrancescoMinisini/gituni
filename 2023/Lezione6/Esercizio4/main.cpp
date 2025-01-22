@@ -12,20 +12,24 @@
 
 using namespace std;
 
-int main ( int argc, char** argv ) {
-
-  double xmin = atol(argv[1]), xmax = atol(argv[2]);
-  if ( argc < 3 || xmin > xmax ) {
-    cout << "Uso del programma : " << argv[0] << " <x_minimo> <x_massimo> " << endl;
-    return -1 ;
-  } else if ( xmin > xmax ) {
-    cout << "<x_minimo> deve essere minore di <x_massimo>" << endl;
-    return -1 ;
+int main()
+{
+  FunzioneBase *par1 = new UnsolvableFunc();
+  par1->Plot("Plotting", 0,70,1e5);
+  double xmin,xmax;
+  int count = 0;
+  for (int i = 0; i < 20; i++)
+  {
+    try{
+    xmin = i*M_PI;
+    xmax = (i + .5)*M_PI;
+    Bisezione b(1e-7);
+    Measure result = b.CercaZeri(xmin,xmax,par1);
+    count++;
+    cout << left << setw(20) <<"Zero number: "<< count << endl;
+    result.Print();
+    } catch (exception e){}
   }
-  FunzioneBase *par1 = new Parabola(3, 5, -2);
-  par1->Plot("Plotting");
-  Bisezione b(1e-8);
-  Measure result = b.CercaZeri(xmin,xmax,par1);
-  result.Print();
+  
   return 0;
 }

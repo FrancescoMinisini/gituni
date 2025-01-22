@@ -1,4 +1,4 @@
-#ifdef PARTICELLA_H
+#ifndef PARTICELLA_H
 #define PARTICELLA_H
 
 using namespace std;

@@ -75,4 +75,10 @@ private:
     double _a, _b, _c;
 };
 
+class Segno : public FunzioneBase {
+  public :
+    double Eval( double x) const override { return (x==0.?0.:(x>0?1.:-1.)); };
+};
+
+
 #endif

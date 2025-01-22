@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cstdlib>
-#include "/snap/root-framework/936/usr/local/include/TH1F.h"
-#include "/snap/root-framework/936/usr/local/include/TApplication.h"
-#include "/snap/root-framework/936/usr/local/include/TCanvas.h"
-#include "/snap/root-framework/936/usr/local/include/TGraphErrors.h"
+#include "TH1F.h"
+#include "TApplication.h"
+#include "TCanvas.h"
+#include "TGraphErrors.h"
 #include "Models/Vettore.h"
 #include <string>
 #include <vector>

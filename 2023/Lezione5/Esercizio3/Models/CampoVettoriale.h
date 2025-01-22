@@ -7,6 +7,7 @@ using namespace std;
 
 class CampoVettoriale: public Posizione {
 public:
+  CampoVettoriale();
   CampoVettoriale(const Posizione&);
   CampoVettoriale(const Posizione&, double Fx, double Fy, double Fz);
   CampoVettoriale(double x, double y, double z, double Fx, double Fy, double Fz);
@@ -14,6 +15,7 @@ public:
   double GetFx() const { return m_Fx; }
   double GetFy() const { return m_Fy; }
   double GetFz() const {return m_Fz;}
+  double GetMagnitude() const {return sqrt(m_Fx*m_Fx+m_Fy*m_Fy+m_Fz*m_Fz);}
 
   void SetFx(double Fx) { m_Fx=Fx;}
   void SetFy(double Fy) { m_Fy=Fy;}
@@ -38,6 +40,13 @@ public:
   protected:
   double m_Fx, m_Fy, m_Fz;
 };
+
+
+CampoVettoriale::CampoVettoriale(): Posizione(){
+    m_Fx = 0;
+    m_Fy = 0;
+    m_Fz = 0;
+}
 
 CampoVettoriale::CampoVettoriale(const Posizione& p): Posizione(p.GetX(),p.GetY(),p.GetZ()){
     m_Fx = 0;

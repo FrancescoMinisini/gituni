@@ -4,33 +4,29 @@ using namespace std ;
 #include<cstring>
 #include<fstream>
 #include"Models/Vettore.h"
+#include <cstdlib>
+#include <vector>
 
 
-int main ( int argc, char** argv ) {
+using namespace std;
+
+int main( int argc , char** argv ) {
 
   if ( argc < 3 ) {
     cout << "Uso del programma : " << argv[0] << " <n_data> <filename> " << endl;
     return -1 ;
-  }
+  }  
 
-  int ndata = atoi(argv[1]);
-  char * filename = argv[2];
+  vector<double> v = Read<double>( atoi(argv[1]) , argv[2] );
 
-  // usiamo il contenitore Vettore per immagazzinare double !
+  Print(v) ;
+  cout << "media    = " << CalcolaMedia<double>( v ) << endl;
+  cout << "varianza = " << CalcolaVarianza<double>( v ) << endl;
+  cout << "mediana  = " << CalcolaMediana<double>( v ) << endl;
 
-  Vettore <double> v = Vettore<double>( ndata , filename );
-
-  v.Print();
-
-  cout << "media    = " << v.GetAverage() << endl;
-  cout << "varianza = " << v.GetVarianza() << endl;
-  cout << "mediana  = " << v.GetMediana() << endl; 
-
-  v.Print();
-
-  v.~Vettore();
   return 0;
 
 }
+
 
 

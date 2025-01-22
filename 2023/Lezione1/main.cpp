@@ -7,7 +7,7 @@ using namespace std ;
 
 int main(int argc, char** kargs){
 if (argc < 3) {
-    cout << "\nToo few parameters executing file: " << kargs[0];
+    cout << "<filepath> <number of datapoints (365)>\nToo few parameters executing file: \n" << kargs[0];
     return 1; // Exit if there are not enough arguments
 }
 

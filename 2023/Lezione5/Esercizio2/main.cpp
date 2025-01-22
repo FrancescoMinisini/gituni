@@ -11,20 +11,34 @@ using namespace std;
 #include "Models/Particella.h"
 #include "Models/Elettrone.h"
 
-int main() {
+#include "Models/CampoVettoriale.h"
+#include "Models/PuntoMateriale.h"
 
-  Particella a (1.,1.6E-19);
-  Elettrone *e = new Elettrone();
+#include <cstdlib>
+#include <cmath>
+#include <iostream>
 
-//   cout << "Particella " << a.GetMassa() << "," << a.GetCarica() << endl;
-  a.Print(); 
+using namespace std;
 
-//   cout << "Elettrone " << e->GetMassa() << "," << e->GetCarica() << endl;
-  e->Print(); 
+int main(int argc, char** argv) {
 
-  Particella b(a) ;  
-  Particella d(*e) ; 
+  if ( argc!= 4) {
+    cerr << "Usage: " << argv[0] << " <x> <y> <z>" << endl;
+    exit(-1); 
+  }
 
-  return 0;
+  const double e =1.60217653E-19 ;
+  const double me=9.1093826E-31;
+  const double mp=1.6726219E-27;  
+  const double d =1.E-10;
 
+  Posizione p( atof(argv[1]) , atof(argv[2]), atof(argv[3]) );
+
+  PuntoMateriale elettrone(me, -e,0.,0.,d/2.);
+  PuntoMateriale protone(mp, e,0.,0.,-d/2.);
+
+  CampoVettoriale E = elettrone.CampoElettrico( p ) + protone.CampoElettrico( p ) ;
+
+  cout << "E=(" << E.GetFx() << "," << E.GetFy() << "," << E.GetFz() << ")" << endl;
+  return 0;  
 }

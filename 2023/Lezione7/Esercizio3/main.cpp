@@ -18,6 +18,7 @@
 using namespace std;
 
 int main (int argc, char** argv) {
+
  
   if (argc != 2) {
     cout << "Usage: " << argv[0] << " <precision>" << endl;
@@ -26,12 +27,17 @@ int main (int argc, char** argv) {
 
   // unsigned int nstep = atoi(argv[1]);
   double prec = atof(argv[1]);
-  Funzione f([] (double x) {return sin(x)*x;});
-  double a = 0, b = M_PI / 2;
-  Trapezi myInt(a, b, 10000000);
+  Gaussiana gaus(0 , 1);
+  Funzione f([&] (double x) {
+  Measure result =  gaus.Probability(x,prec);
+  return 2*result.GetValue();
+  });
   
-  auto result = myInt.Integra(prec,f);
-  result.Print();
+  double x = 2.20733   ;
+  Measure test = gaus.Probability(x,prec);
+  
+
+  f.Plot("Gaus",0,5);
 
   return 0;
 }

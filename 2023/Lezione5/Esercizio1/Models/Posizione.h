@@ -1,3 +1,6 @@
+#ifdef POSIZIONE_H
+#define POSIZIONE_H
+
 #include <vector>      // contenitore
 #include <algorithm>   // funzioni
 #include <fstream>
@@ -35,3 +38,4 @@ class Posizione {
   private:
     double x,y,z;
 };
+#endif

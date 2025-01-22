@@ -1,5 +1,3 @@
-#include "Models/EquazioniDifferenziali.h"
-
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -11,6 +9,7 @@
 #include "TCanvas.h"
 #include "TGraph.h"
 #include <armadillo>
+#include "Models/EquazioniDifferenziali.h"
 
 using namespace std;
 

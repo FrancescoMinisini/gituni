@@ -145,7 +145,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Esercizio2
+CMAKE_PROJECT_NAME:STATIC=Esercizio3
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -210,13 +210,13 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-Esercizio2_BINARY_DIR:STATIC=/home/francesco/programmazione/gituni/2023/Lezione6/Esercizio3/build
+Esercizio3_BINARY_DIR:STATIC=/home/francesco/programmazione/gituni/2023/Lezione6/Esercizio3/build
 
 //Value Computed by CMake
-Esercizio2_IS_TOP_LEVEL:STATIC=ON
+Esercizio3_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-Esercizio2_SOURCE_DIR:STATIC=/home/francesco/programmazione/gituni/2023/Lezione6/Esercizio3
+Esercizio3_SOURCE_DIR:STATIC=/home/francesco/programmazione/gituni/2023/Lezione6/Esercizio3
 
 
 ########################

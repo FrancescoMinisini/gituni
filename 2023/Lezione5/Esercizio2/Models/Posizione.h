@@ -1,4 +1,4 @@
-#ifdef POSIZIONE_H
+#ifndef POSIZIONE_H
 #define POSIZIONE_H
 
 #include <vector>      // contenitore
@@ -35,7 +35,7 @@ class Posizione {
     Posizione(double xm, double ym, double zm){this->x = xm; this->y=ym; this->z=zm;} 
     ~Posizione(){}
 
-  private:
+  protected:
     double x,y,z;
 };
 #endif

@@ -34,7 +34,16 @@ class Posizione {
     Posizione(){x = 0.0; y = 0.0; z = 0.0; }
     Posizione(double xm, double ym, double zm){this->x = xm; this->y=ym; this->z=zm;} 
     ~Posizione(){}
+Posizione&  operator = (Posizione& p) {
+  this->x = p.x; 
+  this->y = p.y; 
+  this->z = p.z; 
+  return *this;
+}
 
+void SetX(double d){x = d;}
+void SetY(double d){y = d;}
+void SetZ(double d){z = d;}
   protected:
     double x,y,z;
 };

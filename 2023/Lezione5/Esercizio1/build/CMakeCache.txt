@@ -218,15 +218,6 @@ Esercizio1_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Esercizio1_SOURCE_DIR:STATIC=/home/francesco/programmazione/gituni/2023/Lezione5/Esercizio1
 
-//Value Computed by CMake
-Esercizio3_BINARY_DIR:STATIC=/home/francesco/programmazione/gituni/2023/Lezione5/Esercizio1/build
-
-//Value Computed by CMake
-Esercizio3_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-Esercizio3_SOURCE_DIR:STATIC=/home/francesco/programmazione/gituni/2023/Lezione5/Esercizio1
-
 
 ########################
 # INTERNAL cache entries

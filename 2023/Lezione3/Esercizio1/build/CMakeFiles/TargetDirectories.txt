@@ -1,3 +1,3 @@
-/home/francesco/programmazione/gituni/2023/Lezione3/Esercizio1/build/CMakeFiles/Lezione3.dir
+/home/francesco/programmazione/gituni/2023/Lezione3/Esercizio1/build/CMakeFiles/Esercizio1.dir
 /home/francesco/programmazione/gituni/2023/Lezione3/Esercizio1/build/CMakeFiles/edit_cache.dir
 /home/francesco/programmazione/gituni/2023/Lezione3/Esercizio1/build/CMakeFiles/rebuild_cache.dir

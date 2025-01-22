@@ -92,6 +92,11 @@ Esercizio2_EXTERNAL_OBJECTS =
 
 Esercizio2: CMakeFiles/Esercizio2.dir/main.cpp.o
 Esercizio2: CMakeFiles/Esercizio2.dir/build.make
+Esercizio2: /snap/root-framework/936/usr/local/lib/libCore.so
+Esercizio2: /snap/root-framework/936/usr/local/lib/libHist.so
+Esercizio2: /snap/root-framework/936/usr/local/lib/libRIO.so
+Esercizio2: /snap/root-framework/936/usr/local/lib/libGraf.so
+Esercizio2: /snap/root-framework/936/usr/local/lib/libGpad.so
 Esercizio2: CMakeFiles/Esercizio2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/francesco/programmazione/gituni/2023/Lezione3/Esercizio2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Esercizio2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Esercizio2.dir/link.txt --verbose=$(VERBOSE)

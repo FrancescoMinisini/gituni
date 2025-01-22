@@ -1,32 +1,36 @@
-#include<iostream>
-using namespace std ; 
-#include<cmath>
-#include<cstring>
-#include<fstream>
-#include"Models/Vettore.h"
+#include <iostream>
 #include <cstdlib>
+#include "/snap/root-framework/936/usr/local/include/TH1F.h"
+#include "/snap/root-framework/936/usr/local/include/TApplication.h"
+#include "/snap/root-framework/936/usr/local/include/TCanvas.h"
+#include "Models/Vettore.h"
+
 #include <vector>
-
-
 using namespace std;
 
 int main( int argc , char** argv ) {
 
   if ( argc < 3 ) {
-    cout << "Uso del programma : " << argv[0] << " <n_data> <filename> " << endl;
+    cout << "Uso del programma : " << argv[0] << " <filename> <n_data>  " << endl;
     return -1 ;
   }  
 
-  vector<double> v = Read<double>( atoi(argv[1]) , argv[2] );
+  TApplication app("app",0,0);
 
-  Print(v) ;
-  cout << "media    = " << CalcolaMedia<double>( v ) << endl;
-  cout << "varianza = " << CalcolaVarianza<double>( v ) << endl;
-  cout << "mediana  = " << CalcolaMediana<double>( v ) << endl;
+  string filename(argv[1]);
+  vector<double> v = Read<double>( atoi(argv[2]) ,  filename);
 
-  return 0;
+  TH1F histo ("histo","histo", 200, -30, 30) ;
+  histo.StatOverflows( kTRUE );
+  for ( int k = 0 ; k < v.size() ; k++ ) histo.Fill( v[k] );
+
+  cout << "Media dei valori caricati = " << histo.GetMean() << endl;
+
+  TCanvas mycanvas("Histo", "Histo");
+
+  histo.Draw();
+  histo.GetXaxis()->SetTitle("measurement");
+
+  app.Run();
 
 }
-
-
-

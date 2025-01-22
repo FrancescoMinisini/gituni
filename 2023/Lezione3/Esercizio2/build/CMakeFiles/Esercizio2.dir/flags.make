@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/snap/root-framework/936/usr/local/include
 
-CXX_FLAGS = 
+CXX_FLAGS = -std=gnu++17
 

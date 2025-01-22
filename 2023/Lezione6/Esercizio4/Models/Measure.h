@@ -9,14 +9,16 @@ using namespace std;
 
 class Measure {
 public:
-    Measure(double v, double s): _value(v), _sigma(s) {
+    Measure(double v, double s)
+        : _value(v), _sigma(s) {
         _cifre = (_sigma > 0) ? static_cast<int>(-floor(log10(_sigma))) : 0;
         if (_sigma * pow(10, _cifre) < 3.5) _cifre++;
         _rounded_value = round(_value * pow(10, _cifre)) / pow(10, _cifre);
         _rounded_sigma = round(_sigma * pow(10, _cifre)) / pow(10, _cifre);
     }
 
-    Measure(double v, double s, unsigned int it): _value(v), _sigma(s), _iterations(it) {
+    Measure(double v, double s, unsigned int it)
+        : _value(v), _sigma(s), _iterations(it) {
         _cifre = (_sigma > 0) ? static_cast<int>(-floor(log10(_sigma))) : 0;
         if (_sigma * pow(10, _cifre) < 3.5) _cifre++;
         _rounded_value = round(_value * pow(10, _cifre)) / pow(10, _cifre);

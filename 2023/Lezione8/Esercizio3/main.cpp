@@ -22,7 +22,6 @@ int main(int argc, char **argv)
     return -1;
   }
 
-  TApplication myApp("myApp", 0, 0);
 
   RungeKutta myRK4;
 
@@ -64,8 +63,8 @@ int main(int argc, char **argv)
   myGraph.GetYaxis()->SetTitle("Periodo [s]");
   myGraph.SetMarkerStyle(20);
   myGraph.Draw("ALP");
+  c.SaveAs("../Periodo.pdf");
 
-  myApp.Run();
 }
 
 std::string convert(double h)

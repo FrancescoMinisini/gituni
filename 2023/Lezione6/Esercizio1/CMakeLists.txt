@@ -13,7 +13,7 @@ include_directories("/snap/root-framework/936/usr/local/include")
 link_directories("/snap/root-framework/936/usr/local/lib")
 
 # Imposta la variabile per i file sorgenti
-set(SOURCES main.cpp Models/Posizione.h Models/Elettrone.h Models/Particella.h)
+set(SOURCES main.cpp Models/FunzioneBase.h)
 
 # Aggiungi l'eseguibile
 add_executable(Esercizio1 ${SOURCES})

@@ -7,37 +7,24 @@
 using namespace std;
 
 #include "Models/Posizione.h"
-
-#include <iostream>
 #include <cstdlib>
+#include "Models/Particella.h"
+#include "Models/Elettrone.h"
 
-using namespace std;
+int main() {
 
-// Questo programma vuole com input da riga di comando le coordinate x, y e z di 
-// un punto e ne restituisce le coordinate sferiche e cilindiriche.
+  Particella a (1.,1.6E-19);
+  Elettrone *e = new Elettrone();
 
-int main(int argc, char** argv) {
+//   cout << "Particella " << a.GetMassa() << "," << a.GetCarica() << endl;
+  a.Print(); 
 
-  // Controlla gli argomenti
-  if ( argc!=4 ) {
-    std::cerr << "Usage: " << argv[0] << " <x> <y> <z>" << endl;
-    return -1;
-  }
+//   cout << "Elettrone " << e->GetMassa() << "," << e->GetCarica() << endl;
+  e->Print(); 
 
-  double x = atof(argv[1]);
-  double y = atof(argv[2]);
-  double z = atof(argv[3]);
-
-  // Crea un oggetto posizione ed accede ai vari metodi
-
-  Posizione P(x,y,z);
-
-  cout << "Coordinate cartesiane: " 
-       << P.GetX() << "," << P.GetY() << "," << P.GetZ() << endl;
-  cout << "Coordinate cilindriche: " 
-       << P.GetRho() << "," << P.GetPhi() << "," << P.GetZ() << endl;
-  cout << "Coordinate sferiche: " 
-       << P.GetR() << "," << P.GetPhi() << "," << P.GetTheta() << endl;
+  Particella b(a) ;  
+  Particella d(*e) ; 
 
   return 0;
+
 }

@@ -360,23 +360,22 @@ CMakeFiles/Esercizio3.dir/main.cpp.o: ../main.cpp \
   /snap/root-framework/936/usr/local/include/TArray.h \
   /snap/root-framework/936/usr/local/include/TApplication.h \
   /snap/root-framework/936/usr/local/include/TApplicationImp.h \
-  ../Models/Integral.h \
-  ../Models/FunzioneBase.h \
   ../Models/Measure.h \
   ../Models/Solutore.h \
+  ../Models/FunzioneBase.h \
   ../Models/Bisezione.h \
   ../Models/Solutore.h \
   ../Models/Measure.h \
   ../Models/Integral.h
 
 
+../Models/Integral.h:
+
 ../Models/Bisezione.h:
 
 ../Models/Solutore.h:
 
 ../Models/Measure.h:
-
-../Models/Integral.h:
 
 /snap/root-framework/936/usr/local/include/TApplicationImp.h:
 

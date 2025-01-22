@@ -2,6 +2,7 @@
 #define __INTEGRAL_H__
 
 #include "FunzioneBase.h"
+#include "Measure.h"
 #include <cmath>
 using namespace std;
 
@@ -77,6 +78,33 @@ public:
     return Measure(_integral, 0., nstep);
   };
 };
+class Midright : public Integral
+{
+
+public:
+  Midright(double a, double b) : Integral(a, b) { ; };
+  Measure Integra(unsigned int nstep, const FunzioneBase &f) override
+  {
+
+    if (nstep <= 0)
+    {
+      cout << "Error, number of steps is negative" << endl;
+      exit(-1);
+    };
+
+    _nstep = nstep;
+    _h = (_b - _a) / _nstep;
+
+    _sum = 0.;
+    for (unsigned int i = 0; i < _nstep; i++)
+    {
+      _sum += f.Eval(_a + (i + 1) * _h);
+    }
+    _integral = _sign * _sum * _h;
+    return Measure(_integral, 0., nstep);
+  };
+
+};
 
 class Simpson : public Integral
 {
@@ -86,7 +114,7 @@ public:
 
   Measure Integra(unsigned int nstep, const FunzioneBase &f) override
   {
-    // if(nstep % 2 == 1) nstep++;
+    if(nstep % 2 == 1) nstep++;
     double result = 0, h = (_b - _a) / nstep;
     int c = 0;
     result += f.Eval(_a) + f.Eval(_b);
@@ -110,15 +138,17 @@ public:
     double h = (_b - _a) / (double)nstep, err = 0, result = 0.5 * (f(_b) + f(_a)), result2 = result;
     for (int i = 1; i < nstep; i++)
     {
-      result = f(_a + h * i);
+      result += f(_a + h * i);
     }
     int steps = 2 * nstep;
     double h2 = h * 0.5;
     for (int i = 1; i < steps; i++)
     {
-      result2 = f(_a + h2 * i);
+      result2 += f(_a + h2 * i);
     }
-    return Measure(result2, 4 * fabs(result2 - result) / 3);
+  result *= h;
+  result2 *= h2;
+    return Measure(result2, 4. * fabs(result2 - result) / 3.);
   }
   
   
@@ -142,7 +172,26 @@ public:
   }
 };
 
- 
+class Prova4 : public FunzioneBase {
+  public :
+    Prova4(double a, double b,double d, double lambda, double l, unsigned int it) : _a(a), _b(b), _d(d), _lambda(lambda), _l(l), _it(it){}
+    
+    double Eval( double x) const override { 
+      Trapezi myInt(_a,_b);
+      Funzione f([=] (double t) {return cos((sqrt(_l*_l+ (x-t)*(x-t))-sqrt(_l*_l+x*x))/_lambda)/_d;});
+      Measure result =  myInt.Integra(_it, f);
+      return result.GetValue(); 
+      };
+
+  protected:
+  double _a;
+  double _b;
+  double _d;
+  double _lambda;
+  double _l;
+  unsigned int _it;
+};
+
 
 double LeggeDiPotenza(double x1,double y1,double x2,double y2){
   return log(fabs(y1/y2))/log(fabs(x1/x2));

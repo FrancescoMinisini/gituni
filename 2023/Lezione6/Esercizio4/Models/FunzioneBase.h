@@ -81,4 +81,9 @@ class Segno : public FunzioneBase {
 };
 
 
+class UnsolvableFunc : public FunzioneBase{
+    public:
+    double Eval (double x) const override {return sin(x)-x*cos(x);};
+};
+
 #endif
