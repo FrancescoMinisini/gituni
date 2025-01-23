@@ -10,9 +10,9 @@ OBJ_DIR = objs
 OBJ = $(OBJ_DIR)/main.o
 HEADERS = $(wildcard Models/*.h)
 
-all: compito
+all: Esercizio3
 
-compito: $(OBJ)
+Esercizio3: $(OBJ)
 	$(CC) $(CFLAGS) $(ROOTFLAGS) $(ARMADILLOFLAGS) -o $@ $^ $(ROOTLIBS) $(ARMADILLOLIBS)
 
 $(OBJ_DIR)/%.o: %.cpp $(HEADERS)
@@ -20,4 +20,4 @@ $(OBJ_DIR)/%.o: %.cpp $(HEADERS)
 	$(CC) $(CFLAGS) $(ROOTFLAGS) $(ARMADILLOFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ_DIR) compito
+	rm -rf $(OBJ_DIR) Esercizio3

@@ -19,6 +19,7 @@
 #include <vector>
 #include <cmath>
 #include <algorithm>
+#include <armadillo>
 using namespace std;
 
 
@@ -97,10 +98,6 @@ int main(int argc, char **argv)
     return result.GetValue(); });
 
   F.Plot("Plot of F(t);t;F(t)", a, zeri[2].GetValue());
-
-// Trapezi Trapezi(a,b);
-// Measure t = Trapezi.Integra(0.0001, f);
-// t.Print();
 
   return 0;
 }

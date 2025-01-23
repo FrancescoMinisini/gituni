@@ -46,7 +46,7 @@ virtual TGraph* Plot(string name, double initialValue = -5., double finalValue =
     graph->SetMarkerStyle(21);
     graph->SetMarkerSize(0.4);
     graph->SetMarkerColor(kRed);
-    canvas.SaveAs(("../" + name + ".pdf").c_str());
+    canvas.SaveAs(( name + ".pdf").c_str());
 
     return graph;
 }
