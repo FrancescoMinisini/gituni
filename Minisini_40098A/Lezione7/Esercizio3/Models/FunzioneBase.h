@@ -44,7 +44,7 @@ public:
         graph.SetMarkerStyle(21);
         graph.SetMarkerSize(0.3);
         graph.SetMarkerColor(kRed);
-        canvas.SaveAs(("../" + name + ".pdf").c_str());
+        canvas.SaveAs(( name + ".pdf").c_str());
     }
     virtual ~FunzioneBase() {};
 };
